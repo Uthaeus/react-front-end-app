@@ -8,6 +8,7 @@ import Calculator from "./calculator/calc";
 import Quote from "./quote/quote";
 import DrumMachine from "./drum/drum";
 import PomodoroClock from "./pomodoro/pomodoro";
+import Markdown from "./markdown/markdown";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "/pomodoro",
         element: <PomodoroClock />
+      },
+      {
+        path: "/markdown",
+        element: <Markdown />
       }
     ]
   }
