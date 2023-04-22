@@ -1,9 +1,27 @@
+import { RouterProvider } from "react-router";
+import { createBrowserRouter } from "react-router-dom";
+
+import RootLayout from "./pages/root";
+import HomePage from "./pages/home";
+import ErrorPage from "./pages/error";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <RootLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        index: true,
+        element: <HomePage />
+      }
+    ]
+  }
+]);
+
 function App() {
   return (
-    <div>
-      <h2>Let's get started!</h2>
-      <button className='btn btn-primary'>Click me!</button>
-    </div>
+    <RouterProvider router={router} />
   );
 }
 
