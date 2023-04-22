@@ -6,6 +6,8 @@ import HomePage from "./pages/home";
 import ErrorPage from "./pages/error";
 import Calculator from "./calculator/calc";
 import Quote from "./quote/quote";
+import DrumMachine from "./drum/drum";
+import PomodoroClock from "./pomodoro/pomodoro";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +26,14 @@ const router = createBrowserRouter([
       {
         path: "/quote",
         element: <Quote />
+      },
+      {
+        path: "/drum",
+        element: <DrumMachine />
+      },
+      {
+        path: "/pomodoro",
+        element: <PomodoroClock />
       }
     ]
   }
