@@ -5,6 +5,7 @@ import RootLayout from "./pages/root";
 import HomePage from "./pages/home";
 import ErrorPage from "./pages/error";
 import Calculator from "./calculator/calc";
+import Quote from "./quote/quote";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: "/calculator",
         element: <Calculator />
+      },
+      {
+        path: "/quote",
+        element: <Quote />
       }
     ]
   }
