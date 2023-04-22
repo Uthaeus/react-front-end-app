@@ -1,7 +1,10 @@
-
-
 function HomePage() {
-    return <div>Welcome to Next.js!</div>;
+  return (
+    <div className="container">
+      <h2>Welcome to Next.js!</h2>
+      <button className="btn btn-primary">Click me</button>
+    </div>
+  );
 }
 
 export default HomePage;
