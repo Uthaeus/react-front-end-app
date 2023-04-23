@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 
 function Quote() {
-  const [quote, setQuote] = useState("The best way to get started is to quit talking and begin doing.");
-  const [author, setAuthor] = useState("Walt Disney");
+  const [quote, setQuote] = useState("");
+  const [author, setAuthor] = useState("");
   const [quotes, setQuotes] = useState([]);
 
   useEffect(() => {
