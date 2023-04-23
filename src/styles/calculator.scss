@@ -53,22 +53,44 @@
                 border-radius: 4px;
                 font-size: 1.6em;
                 color: #fff;
-                background-color: #565454;
+                
                 box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.5);
                 cursor: pointer;
                 transition: all 0.2s ease-in-out;
 
                 &:hover {
-                    background-color: #3e3e3e;
+                    opacity: 0.8;
                 }
             }
 
             .num-btn {
                 width: 22.5%;
+                background-color: #565454;
             }
 
             .zero-btn {
                 width: calc(22.5% * 2 + 10px);
+                background-color: #565454;
+            }
+
+            .operator-btn {
+                width: 22.5%;
+                background-color: #f5a623;
+            }
+
+            .equal-btn {
+                width: 22.5%;
+                background-color: #23f5eb;
+            }
+
+            .mod-btn {
+                width: 22.5%;
+                background-color: #f523f5;
+            }
+
+            .clear-btn {
+                width: 22.5%;
+                background-color: #f52323;
             }
         }
     }

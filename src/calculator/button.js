@@ -1,11 +1,11 @@
 
 
-function Button({ value, type }) {
+function Button({ value, styles, onClick }) {
 
-    const style = value === 0 ? 'zero-btn btn-wrapper col' : 'num-btn btn-wrapper col'
+    
 
     return (
-        <div className={style}>
+        <div className={styles} onClick={onClick}>
             {value}
         </div>
     );

@@ -11,12 +11,61 @@ function Calculator() {
     let operators = ['+', '-', '*', '/'];
     let clears = ['AC', 'C'];
     let mods = ['%', '=', '.'];
-    let type;
+    
+    let func;
+
+    const numChangeHander = (e) => {
+        console.log('numChangeHander', e.target.innerHTML);
+    };
+
+    const operatorChangeHandler = (e) => {
+        setMem([...mem, display, e.target.innerHTML]);
+        if (mem.length > 3) {
+            equalHandler();
+        }
+    };
+
+    const equalHandler = () => {
+        
+    };
+
+    const modHandler = (e) => {
+        console.log('modHandler', e.target.innerHTML);
+    };
+
+    const clearHandler = (e) => {
+        if (e.target.innerHTML === 'AC') {
+            setMem([]);
+        } 
+        setDisplay('0');
+    };
 
     const content = btnArr.map((btn) => {
-        type = nums.includes(btn) ? 'num' : operators.includes(btn) ? 'operator' : clears.includes(btn) ? 'clear' : 'mods';
+        let styles = ['btn-wrapper', 'col'];
+        if (nums.includes(btn)) {
+            if (btn === 0) {
+                styles.push('zero-btn');
+            } else {
+                styles.push('num-btn');
+            }
+            func = numChangeHander;
+        } else if (operators.includes(btn)) { 
+            styles.push('operator-btn');
+            func = operatorChangeHandler;
+        } else if (mods.includes(btn)) {
+            if (btn === '=') {
+                styles.push('equal-btn');
+                func = equalHandler;
+            } else {
+                styles.push('mod-btn');
+                func = modHandler;
+            }
+        } else {
+            styles.push('clear-btn');
+            func = clearHandler;
+        }
 
-        return <Button value={btn} type={type} />
+        return <Button value={btn} styles={styles.join(' ')} onClick={func} />
     });
 
     return (
