@@ -18,9 +18,19 @@ function DrumMachine() {
     };
 
     const drums = ['Q', 'W', 'E', 'A', 'S', 'D', 'Z', 'X', 'C'];
+    const styles = ["pad col mx-2"];
 
     const drumPads = drums.map((drum, index) => {
-        return <Pad key={drum} drum={drum} onClick={drumClickHandler} />
+        if (index === 0 || index === 8) {
+            styles.push("large-top");
+        } else if (index === 1 || index === 7) {
+            styles.push("large-mid-top");
+        } else if (index === 2 || index === 6) {
+            styles.push('mid-top');
+        } else if (index === 3 || index === 5) {
+            styles.push('small-top');
+        }
+        return <Pad key={drum} drum={drum} onClick={drumClickHandler} styles={styles} />
     });
 
     return (

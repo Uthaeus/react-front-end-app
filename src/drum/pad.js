@@ -1,9 +1,9 @@
 
 
-function Pad({ drum, onClick }) {
+function Pad({ drum, onClick, styles }) {
 
     return (
-        <div className="pad col m-2" onClick={onClick}>
+        <div className={styles.join(' ')} onClick={onClick}>
             {drum}
         </div>
     );
