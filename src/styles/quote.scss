@@ -4,7 +4,75 @@
     min-height: calc(100vh - 45px);
     margin: 0 auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(80, 64, 151);
+    background: radial-gradient(
+        circle at calc(100% - 200px),
+        rgba(28, 23, 53, 1) 0%,
+        rgb(4, 1, 21) 35%,
+        rgb(85, 82, 96) 100%
+    );
+
+    .quote-box {
+        width: 80%;
+        min-height: 350px;
+        margin: 3rem auto;
+        padding: 2rem;
+        border-radius: 5px;
+        background-color: #c6c1cbdc;
+        box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.5);
+
+        .quote-text {
+            font-size: 1.6rem;
+            font-weight: 400;
+            text-align: center;
+            margin: auto 10px;
+            color: #161616;
+        }
+
+        .quote-author {
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: flex-end;
+            font-size: 0.9em;
+            font-weight: 700;
+            text-align: right;
+            color: #161616;
+        }
+    }
+
+    .quote-buttons {
+        width: 80%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-top: 2rem;
+
+        .quote-button {
+            width: 13rem;
+            height: 3rem;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(25, 59, 94);
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.5);
+
+            &:hover {
+                background-color: rgba(17, 137, 173, 0.8);
+            }
+        }
+
+        .tweet {
+            font-size: 1.5rem;
+            color: rgb(59, 92, 239);
+            margin-left: 3rem;
+        }
+    }
 }
