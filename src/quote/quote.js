@@ -5,18 +5,18 @@ function Quote() {
   const [author, setAuthor] = useState("Walt Disney");
   const [quotes, setQuotes] = useState([]);
 
-//   useEffect(() => {
-//     fetch("https://type.fit/api/quotes")
-//       .then((response) => response.json())
-//       .then((data) => {
-//         setQuotes(data);
-//         setQuote(data[0].text);
-//         setAuthor(data[0].author);
-//       })
-//       .catch((error) => {
-//         console.log("useEffect quote generator", error);
-//       });
-//   }, []);
+  useEffect(() => {
+    fetch("https://type.fit/api/quotes")
+      .then((response) => response.json())
+      .then((data) => {
+        setQuotes(data);
+        setQuote(data[0].text);
+        setAuthor(data[0].author);
+      })
+      .catch((error) => {
+        console.log("useEffect quote generator", error);
+      });
+  }, []);
 
     const getQuoteHandler = () => {
         const randomNum = Math.floor(Math.random() * quotes.length);
@@ -41,7 +41,7 @@ function Quote() {
 
       <div className="quote-buttons">
         <button className="quote-button" onClick={getQuoteHandler}>New Quote</button>
-        <button className="quote-button tweet" onClick={sendTweetHandler}><i class="bi bi-twitter"></i></button>
+        <button className="quote-button tweet" onClick={sendTweetHandler}><i className="bi bi-twitter"></i></button>
       </div>
     </div>
   );
