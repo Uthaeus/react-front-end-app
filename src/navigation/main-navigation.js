@@ -5,7 +5,7 @@ function MainNavigation() {
     <div className="nav-container">
       <NavLink
         to="/"
-        exact
+        end
         className={({ isActive }) =>
           isActive ? "nav-link active" : "nav-link"
         }
@@ -14,7 +14,6 @@ function MainNavigation() {
       </NavLink>
       <NavLink
         to="/calculator"
-        exact
         className={({ isActive }) =>
           isActive ? "nav-link active" : "nav-link"
         }
@@ -23,7 +22,6 @@ function MainNavigation() {
       </NavLink>
       <NavLink
         to="/quote"
-        exact
         className={({ isActive }) =>
           isActive ? "nav-link active" : "nav-link"
         }
@@ -32,7 +30,6 @@ function MainNavigation() {
       </NavLink>
       <NavLink
         to="/drum"
-        exact
         className={({ isActive }) =>
           isActive ? "nav-link active" : "nav-link"
         }
@@ -41,7 +38,6 @@ function MainNavigation() {
       </NavLink>
       <NavLink
         to="/pomodoro"
-        exact
         className={({ isActive }) =>
           isActive ? "nav-link active" : "nav-link"
         }
@@ -50,7 +46,6 @@ function MainNavigation() {
       </NavLink>
       <NavLink
         to="/markdown"
-        exact
         className={({ isActive }) =>
           isActive ? "nav-link active" : "nav-link"
         }

@@ -5,6 +5,7 @@ import Button from "./button";
 function Calculator() {
     const [display, setDisplay] = useState('0');
     const [mem, setMem] = useState([]);
+    const [flag, setFlag] = useState(false);
 
     const btnArr = ['AC', 'C', '%', '/', 7, 8, 9, '*', 4, 5, 6, '-', 1, 2, 3, '+', 0, '.','=',];
     let nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -15,7 +16,12 @@ function Calculator() {
     let func;
 
     const numChangeHander = (e) => {
-        console.log('numChangeHander', e.target.innerHTML);
+        if (display === '0' || flag) {
+            setDisplay(e.target.innerHTML);
+            setFlag(false);
+        }  else {
+            setDisplay(display + e.target.innerHTML);
+        }
     };
 
     const operatorChangeHandler = (e) => {
@@ -23,14 +29,27 @@ function Calculator() {
         if (mem.length > 3) {
             equalHandler();
         }
+        setFlag(true);
     };
 
     const equalHandler = () => {
-        
+        setMem(() => [...mem, display]);
+        if (mem.length >= 2) {
+            let func = [...mem, display].join('');
+            let result = Function(`return ${func}`)();
+            setDisplay(result);
+            setFlag(true);
+        }
     };
 
     const modHandler = (e) => {
-        console.log('modHandler', e.target.innerHTML);
+        if (e.target.innerHTML === '%') {
+            setDisplay(display / 100);
+        } else if (e.target.innerHTML === '.') {
+            setDisplay(display + '.');
+        } else {
+            equalHandler();
+        }
     };
 
     const clearHandler = (e) => {
@@ -65,7 +84,7 @@ function Calculator() {
             func = clearHandler;
         }
 
-        return <Button value={btn} styles={styles.join(' ')} onClick={func} />
+        return <Button key={btn} value={btn} styles={styles.join(' ')} onClick={func} />
     });
 
     return (
