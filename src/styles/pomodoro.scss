@@ -10,7 +10,6 @@
     background-color: rgb(80, 64, 151);
 
     .main-display {
-        border: 1px solid black;
         width: 100%;
         min-height: 400px;
         display: flex;
@@ -20,11 +19,12 @@
         .main-time {
             font-size: 140px;
             color: white;
+            font-weight: bold;
+            text-shadow: 3px 3px 3px #000;
         }
     }
 
     .controls {
-        border: 1px solid blue;
         width: 100%;
         min-height: 350px;
         display: grid;
@@ -37,6 +37,25 @@
     flex-direction: column;
     color: #ccc;
     font-size: 1.4em;
+}
+
+.side-time {
+    font-size: 3em;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.side-control-buttons {
+    display: flex;
+    flex-direction: row;
+
+    .side-control-button {
+        width: 3rem;
+        padding: 5px;
+        background-color: blue;
+        color: white;
+        border-radius: 3px;
+    }
 }
 
 .break {
@@ -53,4 +72,49 @@
     align-items: center;
     color: #aaa;
     font-size: 1.5em;
+}
+
+.play-buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    .button-base {
+        padding: 5px;
+        background-color: blue;
+        color: white;
+        border-radius: 3px;
+        font-size: 1.2em;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    .play {
+        width: 30%;
+    }
+
+    .pause {
+        width: 20%;
+    }
+
+    .reset {
+        width: 20%;
+    }
+}
+
+.switch-buttons {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+
+    .switch-button {
+        width: 30%;
+        padding: 5px;
+    }
 }
