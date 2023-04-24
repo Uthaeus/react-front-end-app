@@ -16,13 +16,41 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        .main-time {
+            font-size: 140px;
+            color: white;
+        }
     }
 
     .controls {
         border: 1px solid blue;
         width: 100%;
         min-height: 350px;
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
     }
+}
+
+.side-control {
+    display: flex;
+    flex-direction: column;
+    color: #ccc;
+    font-size: 1.4em;
+}
+
+.break {
+    align-items: flex-end;
+}
+
+.session {
+    align-items: flex-start;
+}
+
+.display-control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #aaa;
+    font-size: 1.5em;
 }
