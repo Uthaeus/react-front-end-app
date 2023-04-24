@@ -1,26 +1,33 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import Pad from "./pad";
+import { audioClips } from "./clips";
 
 function DrumMachine() {
-    const [display, setDisplay] = useState('Click or press a key to play a sound');
-    const [drumArr, setDrumArr] = useState([]);
+    const [display, setDisplay] = useState('');
 
-    function playSound() {}
-
-    const drumClickHandler = (e) => {
-        setDrumArr([...drumArr, e.target.innerText]);
-        playSound()
+    const drumClickHandler = (val) => {
+        setDisplay(prev => prev + val + ' ');
     };
 
-    const handleKeyDown = (e) => {
+    function reset() {
+        setDisplay('');
+    }
 
-    };
+    function replay() {
+        const replayArr = display.trim().split(' ');
+        replayArr.forEach((val, index) => {
+            setTimeout(() => {
+                const audioTag = document.getElementById(val);
+                audioTag.currentTime = 0;
+                audioTag.play();
+            }, 400 * index);
+        });
+    }
 
-    const drums = ['Q', 'W', 'E', 'A', 'S', 'D', 'Z', 'X', 'C'];
-    const styles = ["pad col mx-2"];
+    const drumPads = audioClips.map((clip, index) => {
+        const styles = ["pad", "col", "mx-2"];
 
-    const drumPads = drums.map((drum, index) => {
         if (index === 0 || index === 8) {
             styles.push("large-top");
         } else if (index === 1 || index === 7) {
@@ -30,7 +37,7 @@ function DrumMachine() {
         } else if (index === 3 || index === 5) {
             styles.push('small-top');
         }
-        return <Pad key={drum} drum={drum} onClick={drumClickHandler} styles={styles} />
+        return <Pad key={clip.id} clip={clip} onClick={drumClickHandler} styles={styles} />
     });
 
     return (
@@ -41,7 +48,13 @@ function DrumMachine() {
                 
             </div>
             <div className="display">
+                <p className="dis-info">press or click to play sound</p>
                 <p>{display}</p>
+            </div>
+            <div className="actions">
+                <button className='action-btn replay' onClick={replay}>Replay</button>
+                <button className="action-btn reset" onClick={reset}>Reset</button>
+
             </div>
         </div>
     );
