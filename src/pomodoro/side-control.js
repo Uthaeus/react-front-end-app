@@ -15,8 +15,8 @@ function SideControl({type, time, handleTimeChange}) {
         <div className={style}>
             <h2 className='side-label'>{type.toUpperCase()}</h2>
             <div className="side-control-buttons">
-                <button className="side-control-button" onClick={handleInc}><i class="bi bi-caret-up-fill"></i></button>
-                <button className="side-control-button" onClick={handleDec}><i class="bi bi-caret-down-fill"></i></button>
+                <button className="side-control-button" onClick={handleInc}><i className="bi bi-caret-up-fill"></i></button>
+                <button className="side-control-button" onClick={handleDec}><i className="bi bi-caret-down-fill"></i></button>
             </div>
             <p className="side-time">{time}</p>
         </div>

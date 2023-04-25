@@ -27,20 +27,27 @@ function PomodoroClock() {
     }
 
     const timer = () => {
-        if (isRunning) {
-            setTimeout(() => {
-                setDisplay(display - 1);
-                if (display === 0) {
-                    if (mode === 'session') {
-                        setMode('break');
-                        setDisplay(breakTime * 60);
-                    } else if (mode === 'break') {
-                        setMode('session');
-                        setDisplay(sessionTime * 60);
+        
+        setInterval(() => {
+            let now = new Date().getTime();
+            let distance = now + 1000;
+            console.log('timer');
+            setDisplay((prev) => {
+                if (now >= distance) {
+                    if (prev - 1 === 0) {
+                        if (mode === 'session') {
+                            setMode('break');
+                            setDisplay(breakTime * 60);
+                        } else if (mode === 'break') {
+                            setMode('session');
+                            setDisplay(sessionTime * 60);
+                        }
+                    } else {
+                        return prev - 1;
                     }
                 }
-            }, 1000);
-        }
+            });
+        }, 1000);
     };
 
     function handlePlay() {
@@ -50,7 +57,7 @@ function PomodoroClock() {
 
     function handlePause() {
         setIsRunning(false);
-        
+        clearInterval(timer);
     }
 
     function handleSwitch(m) {
