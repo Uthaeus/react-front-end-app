@@ -7,13 +7,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(80, 64, 151);
+    background-color: rgb(151, 64, 139);
 
     .main-display {
         width: 100%;
         min-height: 400px;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        justify-content: space-around;
         align-items: center;
 
         .main-time {
@@ -50,11 +51,15 @@
     flex-direction: row;
 
     .side-control-button {
-        width: 3rem;
+        width: 5rem;
         padding: 5px;
-        background-color: blue;
+        background-color: rgb(15, 43, 103);
         color: white;
-        border-radius: 3px;
+        border-radius: 8px;
+
+        &:hover {
+            opacity: 0.8;
+        }
     }
 }
 

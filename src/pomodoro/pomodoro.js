@@ -117,6 +117,7 @@ function PomodoroClock() {
         <div className="pomodoro-clock-container">
             <div className="main-display">
                 <p className='main-time'>{format(display)}</p>
+                <hr className='w-75 mx-auto text-white' />
             </div>
             <div className="controls">
                 <SideControl type='break' time={breakTime} handleTimeChange={handleTimeChange} />
