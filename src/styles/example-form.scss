@@ -2,9 +2,9 @@
 .example-form-container {
     width: 60%;
     min-height: calc(100vh - 55px);
-    background-color: grey;
+    background: linear-gradient(45deg, #989595, #898d8e, #cfcdcd);
     margin: 0 auto;
     margin-top: 20px;
-    padding: 10px;
+    padding: 10px 25px;
     border-radius: 5px;
 }
