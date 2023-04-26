@@ -38,16 +38,17 @@
 .display {
     width: 100%;
     min-height: 350px;
-    background-color: #D9D9D9;
+    background-color: #d9d9d9e2;
     color: #353535;
-    padding: 20px;
+    padding: 5px 20px;
     font-size: 1.6em;
     border-radius: 8px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.653);
 
     .dis-info {
         font-size: 0.8em;
-        color:rgba(0, 0, 0, 0.2)
+        color:rgba(0, 0, 0, 0.2);
+        text-decoration: underline;
     }
 }
 
@@ -88,11 +89,17 @@
         color: #FFBA08;
         background-color: #ffb9080f;
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.653);
-        transition: all 0.3s ease-in-out;
+        transition: all 0.1s ease-in-out;
 
         &:hover {
             cursor: pointer;
             border: 1px solid #FFBA08;
         }
     }
+}
+
+.playing {
+    border-color: #FFBA08;
+    transform: scale(1.2);
+    box-shadow: 5px 5px 10px #FFBA08;
 }
