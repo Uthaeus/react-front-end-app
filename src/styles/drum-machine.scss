@@ -96,10 +96,11 @@
             border: 1px solid #FFBA08;
         }
     }
+
+    .playing {
+        border: 2px solid #FFBA08;
+        transform: scale(1.2);
+        box-shadow: 5px 5px 10px #FFBA08;
+    }
 }
 
-.playing {
-    border-color: #FFBA08;
-    transform: scale(1.2);
-    box-shadow: 5px 5px 10px #FFBA08;
-}
