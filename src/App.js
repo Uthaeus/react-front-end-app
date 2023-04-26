@@ -9,6 +9,7 @@ import Quote from "./quote/quote";
 import DrumMachine from "./drum/drum";
 import PomodoroClock from "./pomodoro/pomodoro";
 import Markdown from "./markdown/markdown";
+import ExampleForm from "./form/example-form";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "/markdown",
         element: <Markdown />
+      },
+      {
+        path: "/example-form",
+        element: <ExampleForm />
       }
     ]
   }

@@ -52,6 +52,14 @@ function MainNavigation() {
       >
         Markdown Previewer
       </NavLink>
+      <NavLink
+        to="/example-form"
+        className={({ isActive }) =>
+          isActive ? "nav-link active" : "nav-link"
+        }
+      >
+        Example Form
+      </NavLink>
     </div>
   );
 }
