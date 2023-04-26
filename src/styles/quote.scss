@@ -9,18 +9,22 @@
     justify-content: center;
     background: radial-gradient(
         circle at calc(100% - 200px),
-        rgba(28, 23, 53, 1) 0%,
-        rgb(4, 1, 21) 35%,
-        rgb(85, 82, 96) 100%
+        #454545 0%,
+        #453d44 35%,
+        #474251 100%
     );
 
+    h1 {
+        color: #FFE6C7
+    }
+    
     .quote-box {
         width: 80%;
         min-height: 350px;
         margin: 3rem auto;
         padding: 2rem;
         border-radius: 5px;
-        background-color: #c6c1cbdc;
+        background-color: #FF6000;
         box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.5);
 
         .quote-text {
@@ -55,8 +59,8 @@
             width: 13rem;
             height: 3rem;
             border-radius: 5px;
-            background-color: rgb(25, 59, 94);
-            color: #fff;
+            background-color: #FFA559;
+            color: #FFE6C7;
             font-size: 1rem;
             font-weight: 700;
             cursor: pointer;
@@ -70,7 +74,7 @@
 
         .tweet {
             font-size: 1.5rem;
-            color: rgb(59, 92, 239);
+            color: #FFE6C7;
             margin-left: 3rem;
         }
     }
