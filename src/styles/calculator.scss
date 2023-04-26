@@ -6,11 +6,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(66, 63, 79);
+    background-color: #005F73;
 
     h1 {
         font-size: 2.5rem;
         margin: 3rem 0;
+        color: #0A9396;
         text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
     }
 
@@ -20,7 +21,7 @@
         display: flex;
         flex-direction: column;
         border-radius: 8px;
-        background-color: rgb(62, 62, 69);
+        background-color: #94D2BD;
         box-shadow: 6px 6px 10px 6px rgba(0, 0, 0, 0.5);
 
         .display {
@@ -32,10 +33,10 @@
             justify-content: flex-end;
             align-items: flex-end;
             border: 2px solid #161616;
-            background-color: #121212;
+            background-color: #001219;
             border-radius: 6px;
             font-size: 2em;
-            color: #fff;
+            color: #E9D8A6;
         }
 
         .buttons {
@@ -52,7 +53,7 @@
                 align-items: center;
                 border-radius: 4px;
                 font-size: 1.6em;
-                color: #fff;
+                color: #E9D8A6;
                 
                 box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.5);
                 cursor: pointer;
@@ -65,32 +66,32 @@
 
             .num-btn {
                 width: 22.5%;
-                background-color: #565454;
+                background-color: #005F73;
             }
 
             .zero-btn {
                 width: calc(22.5% * 2 + 10px);
-                background-color: #565454;
+                background-color: #005F73;
             }
 
             .operator-btn {
                 width: 22.5%;
-                background-color: #f5a623;
+                background-color: #CA6702;
             }
 
             .equal-btn {
                 width: 22.5%;
-                background-color: #23f5eb;
+                background-color: #BB3E03;
             }
 
             .mod-btn {
                 width: 22.5%;
-                background-color: #f523f5;
+                background-color: #EE9B00;
             }
 
             .clear-btn {
                 width: 22.5%;
-                background-color: #f52323;
+                background-color: #9B2226;
             }
         }
     }
