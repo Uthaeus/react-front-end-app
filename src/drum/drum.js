@@ -46,8 +46,8 @@ function DrumMachine() {
                         <p>{display}</p>
                     </div>
                     <div className="actions">
-                        <button className='action-btn replay' onClick={replay}>Replay</button>
-                        <button className="action-btn reset" onClick={reset}>Reset</button>
+                        <button className='action-btn' onClick={replay}>Replay</button>
+                        <button className="action-btn" onClick={reset}>Reset</button>
 
                     </div>
                 </div>
