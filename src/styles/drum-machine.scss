@@ -1,109 +1,103 @@
 
 .drum-machine-container {
-    width: 95%;
-    min-height: calc(100vh - 45px);
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgb(45, 105, 91);
+    min-height: calc(100vh - 50px);
+    padding: 20px 40px;
+    background-image: url('../assets/images/space-main1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 
     h1 {
-        width: 80%;
-        font-size: 2.8rem;
-        color: #161616;
-        margin: 3rem 0;
-        text-align: end;
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.75);
+        color: #fff;
     }
 
-    .display {
-        width: 80%;
-        height: 10rem;
-        background-color: #ccc;
-        color: #161616;
-        border-radius: 1rem;
-        display: flex;
-        flex-direction: column;
-        font-size: 2rem;
-        padding: 0 1rem;
-        margin-bottom: 2rem;
-        box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.75);
-
-        .dis-info {
-            width: 100%;
-            display: flex;
-            justify-content: flex-end;
-            font-size: 0.7em;
-            color: grey;
-        }
-    }
-
-    .actions {
-        width: 60%;
-        display: flex;
-        justify-content: flex-end;
-
-        .action-btn {
-            width: 20rem;
-            padding: 4px 10px;
-            cursor: pointer;
-            box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.75);
-            transition: all 0.2s ease-in-out;
-
-            &:hover {
-                opacity: 0.8;
-            }
-        }
-
-        .reset {
-            margin-left: 2rem;
-            background-color: rgb(45, 105, 91);
-            color: white;
-        }
-
-        .replay {
-            background-color: rgb(45, 79, 105);
-            color: white;
-        }
-    }
-
-    .drum-wrapper {
+    .drum-machine-wrapper {
         width: 100%;
-    }
+        display: grid;
+        grid-template-columns: 2fr 1fr;
 
-    .pad {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: rgb(31, 52, 67);
-        color: #ccc;
-        font-size: 1.5rem;
-        border-radius: 50%;
-        height: 10rem;
-        cursor: pointer;
-        box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.75);
-        transition: all 0.2s ease-in-out;
+        .drum-wrapper {
+            min-height: calc(100vh - 200px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .display-wrapper {
+            min-height: calc(100vh - 200px);
+            margin-right: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+.display {
+    width: 100%;
+    min-height: 300px;
+    background-color: #fff;
+    color: #121212;
+    padding: 20px;
+    font-size: 1.6em;
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+
+    .dis-info {
+        font-size: 0.8em;
+        color:rgba(0, 0, 0, 0.2)
+    }
+}
+
+.actions {
+    margin-top: 20px;
+    width: 75%;
+    display: flex;
+    justify-content: space-around;
+
+    .action-btn {
+        width: 40%;
+        padding: 4px 12px;
+        border-radius: 4px;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in-out;
 
         &:hover {
-            background-color: rgb(45, 105, 91);
-            color: white;
+            opacity: 0.8;
         }
     }
 
-    .large-top {
-        margin-top: 8rem;
+    .replay {
+        background-color: aqua;
+        color:rgba(0, 0, 0, 0.2);
     }
 
-    .large-mid-top {
-        margin-top: 6rem;
+    .reset {
+        background-color: aqua;
+        color:rgba(0, 0, 0, 0.2);
     }
+}
 
-    .mid-top {
-        margin-top: 4rem;
-    }
+.drums {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 
-    .small-top {
-        margin-top: 2rem;
+    .pad {
+        border: 1px solid white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 100px;
+        border-radius: 4px;
+        background-color: aqua;
+        color: #121212;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+            opacity: 0.8;
+        }
     }
 }

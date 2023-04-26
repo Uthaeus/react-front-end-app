@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-function Pad({ clip, onClick, styles }) {
+function Pad({ clip, onClick }) {
 
     useEffect(() => {
         document.addEventListener('keydown', handleKeyPress);
@@ -24,7 +24,7 @@ function Pad({ clip, onClick, styles }) {
     }
 
     return (
-        <div id={clip.id} className={styles.join(' ')} onClick={playSound}>
+        <div id={clip.id} className='pad m-3' onClick={playSound}>
             <audio className='clip' src={clip.url} id={clip.keyTrigger} />
             {clip.keyTrigger}
         </div>
