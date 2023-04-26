@@ -11,7 +11,7 @@ function Markdown() {
     return (
         <div className="markdown-container">
             <div className="w-100 row row-columns-2">
-                <h1 className='mt-3'>Markdown Previewer</h1>
+                <h1 className='mt-3 head'>Markdown Previewer</h1>
                 <p>Enter markdown and watch translated text appear!</p>
                 <div className="col m-2">
                     <textarea className='markdown-textarea' 

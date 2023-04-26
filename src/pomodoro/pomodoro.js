@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import SideControl from './side-control';
 import DisplayControl from './display-control';

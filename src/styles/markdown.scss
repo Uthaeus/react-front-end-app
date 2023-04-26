@@ -6,18 +6,18 @@
     display: flex;
     background: linear-gradient(45deg, #959393, #bec4c2, #959393);
 
-    h1 {
+    .head {
         text-align: center;
         font-size: 2.5rem;
         margin-bottom: 20px;
-        color: #161616;
+        color: #062b50;
         text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+        text-decoration: underline;
     }
 
     p {
         text-align: center;
         color: #495e5f;
-        text-decoration: underline;
     }
 
     .markdown-textarea {
@@ -27,7 +27,7 @@
         border: none;
         background-color: rgb(206, 226, 221);
         box-shadow: 4px 4px 10px 4px rgba(0, 0, 0, 0.5);
-        color: #161616;
+        color: #062b50;
         font-size: 1.1rem;
         resize: none;
         outline: none;
@@ -37,9 +37,9 @@
         min-height: 80%;
         padding: 20px;
         border: none;
+        color: rgb(40, 39, 39);
         background-color: rgb(206, 226, 221);
         box-shadow: 4px 4px 10px 4px rgba(0, 0, 0, 0.5);
-        color: #413e3e;
         font-size: 1.1rem;
         resize: none;
         outline: none;
