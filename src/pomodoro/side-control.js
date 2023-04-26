@@ -1,7 +1,6 @@
 
 
 function SideControl({type, time, handleTimeChange}) {
-    let style = type === 'break' ? 'side-control break' : 'side-control session';
 
     function handleInc() {
         handleTimeChange(type, 'inc');
@@ -12,7 +11,7 @@ function SideControl({type, time, handleTimeChange}) {
     }
 
     return (
-        <div className={style}>
+        <div className='side-control'>
             <h2 className='side-label'>{type.toUpperCase()}</h2>
             <div className="side-control-buttons">
                 <button className="side-control-button" onClick={handleInc}><i className="bi bi-caret-up-fill"></i></button>

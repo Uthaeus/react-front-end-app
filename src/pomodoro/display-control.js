@@ -10,10 +10,10 @@ function DisplayControl({ reset, handlePlay, handlePause, handleSwitch }) {
                 <button className='reset button-base' onClick={reset}><i className="bi bi-arrow-counterclockwise"></i></button>
             </div>
             <div className='switch-buttons'>
-                <button className='switch-button' onClick={() => handleSwitch('break')}><i className="bi bi-arrow-return-left"></i></button>
-                <button className='switch-button' onClick={() => handleSwitch('session')}><i className="bi bi-arrow-return-right"></i></button>
+                <button className='switch-button button-base' onClick={() => handleSwitch('break')}><i className="bi bi-arrow-return-left"></i></button>
+                <button className='switch-button button-base' onClick={() => handleSwitch('session')}><i className="bi bi-arrow-return-right"></i></button>
             </div>
-            <h1 className="my-2">Pomodoro Clock</h1>
+            <h1 className="my-5">Pomodoro Clock</h1>
         </div>
     );
 }
