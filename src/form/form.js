@@ -14,16 +14,25 @@ const initialState = {
     genres: [],
 };
 
-function Form({ submitForm }) {
+function Form({ submitForm, passDataHandler }) {
     const [formState, setFormState] = useState(initialState);
 
     function changeHandler(e) {
-        console.log('change', e.target.id, e.target.value);
         setFormState({ ...formState, [e.target.id]: e.target.value });
+    }
+
+    function radioCheckHandler(e) {
+        if (e.target.name === 'usage') {
+            setFormState({ ...formState, [e.target.name]: e.target.value });
+        } else {
+            let temArr = [...formState.genres, e.target.value];
+            setFormState({ ...formState, genres: temArr });
+        }
     }
 
     function formSubmitHandler(e) {
         e.preventDefault();
+        passDataHandler(formState);
         submitForm(false);
     }
 
@@ -79,16 +88,16 @@ function Form({ submitForm }) {
                 </div>
                 <div className="col-12">
                     <p>How much of your streaming is on this service?</p>
-                    <input type='radio' id='radio-all' value='all' name='usage' />
+                    <input type='radio' id='radio-all' value='all' name='usage' onChange={radioCheckHandler} />
                     <label className="me-3" htmlFor="radio-all">: All</label>
 
-                    <input type='radio' id='radio-most' value='most' name='usage' />
+                    <input type='radio' id='radio-most' value='most' name='usage' onChange={radioCheckHandler} />
                     <label className="form-label me-3" htmlFor="radio-most">: Most</label>
 
-                    <input type='radio' id='radio-some' value='some' name='usage' />
+                    <input type='radio' id='radio-some' value='some' name='usage' onChange={radioCheckHandler} />
                     <label className="form-label me-3" htmlFor="radio-some">: Some</label>
 
-                    <input type='radio' id='radio-none' value='none' name='usage' />
+                    <input type='radio' id='radio-none' value='none' name='usage' onChange={radioCheckHandler} />
                     <label className="form-label" htmlFor="radio-none">: None</label>
                 </div>
                 <div className="col-8">
@@ -100,35 +109,35 @@ function Form({ submitForm }) {
                     <div className="row">
                         <div className="col-6">
                             <div className="form-check mb-2">
-                                <input className="form-check-input" type="checkbox" id="checkDrama" name="genres" value='Drama' />
+                                <input className="form-check-input" type="checkbox" id="checkDrama" name="genres" value='Drama' onChange={radioCheckHandler} />
                                 <label className="form-check-label" htmlFor="checkDrama">
                                     Drama
                                 </label>
                             </div>
 
                             <div className="form-check mb-2">
-                                <input className="form-check-input" type="checkbox" id="checkCrime" name="genres" value='Crime' />
+                                <input className="form-check-input" type="checkbox" id="checkCrime" name="genres" value='Crime' onChange={radioCheckHandler} />
                                 <label className="form-check-label" htmlFor="checkCrime">
                                     Crime
                                 </label>
                             </div>
 
                             <div className="form-check mb-2">
-                                <input className="form-check-input" type="checkbox" id="checkWestern" name="genres" value='Western' />
+                                <input className="form-check-input" type="checkbox" id="checkWestern" name="genres" value='Western' onChange={radioCheckHandler} />
                                 <label className="form-check-label" htmlFor="checkWestern">
                                     Western
                                 </label>
                             </div>
 
                             <div className="form-check mb-2">
-                                <input className="form-check-input" type="checkbox" id="checkRomance" name="genres" value='Romance' />
+                                <input className="form-check-input" type="checkbox" id="checkRomance" name="genres" value='Romance' onChange={radioCheckHandler} />
                                 <label className="form-check-label" htmlFor="checkRomance">
                                     Romance
                                 </label>
                             </div>
 
                             <div className="form-check">
-                                <input className="form-check-input" type="checkbox" id="checkHorror" name="genres" value='Horror' />
+                                <input className="form-check-input" type="checkbox" id="checkHorror" name="genres" value='Horror' onChange={radioCheckHandler} />
                                 <label className="form-check-label" htmlFor="checkHorror">
                                     Horror
                                 </label>
@@ -136,35 +145,35 @@ function Form({ submitForm }) {
                         </div>
                         <div className="col-6">
                             <div className="form-check mb-2">
-                                <input className="form-check-input" type="checkbox" id="checkComedy" name="genres" value='Comedy' />
+                                <input className="form-check-input" type="checkbox" id="checkComedy" name="genres" value='Comedy' onChange={radioCheckHandler} />
                                 <label className="form-check-label" htmlFor="checkComedy">
                                     Comedy
                                 </label>
                             </div>
 
                             <div className="form-check mb-2">
-                                <input className="form-check-input" type="checkbox" id="checkSciFi" name="genres" value='SciFi' />
+                                <input className="form-check-input" type="checkbox" id="checkSciFi" name="genres" value='SciFi' onChange={radioCheckHandler} />
                                 <label className="form-check-label" htmlFor="checkSciFi">
                                     SciFi
                                 </label>
                             </div>
 
                             <div className="form-check mb-2">
-                                <input className="form-check-input" type="checkbox" id="checkMystery" name="genres" value='Mystery' />
+                                <input className="form-check-input" type="checkbox" id="checkMystery" name="genres" value='Mystery' onChange={radioCheckHandler} />
                                 <label className="form-check-label" htmlFor="checkMystery">
                                     Mystery
                                 </label>
                             </div>
 
                             <div className="form-check mb-2">
-                                <input className="form-check-input" type="checkbox" id="checkAnime" name="genres" value='Anime' />
+                                <input className="form-check-input" type="checkbox" id="checkAnime" name="genres" value='Anime' onChange={radioCheckHandler} />
                                 <label className="form-check-label" htmlFor="checkAnime">
                                     Anime
                                 </label>
                             </div>
 
                             <div className="form-check">
-                                <input className="form-check-input" type="checkbox" id="checkAction" name="genres" value='Action' />
+                                <input className="form-check-input" type="checkbox" id="checkAction" name="genres" value='Action' onChange={radioCheckHandler} />
                                 <label className="form-check-label" htmlFor="checkAction">
                                     Action
                                 </label>

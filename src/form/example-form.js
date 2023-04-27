@@ -5,6 +5,11 @@ import Result from "./result";
 
 function ExampleForm() {
     const [isForm, setIsForm] = useState(true);
+    const [data, setData] = useState({});
+
+    function passDataHandler(data) {
+        setData(data);
+    }
 
     function submitForm(m) {
         setIsForm(m);
@@ -13,7 +18,7 @@ function ExampleForm() {
     return (
         <div className="example-form-container">
             <h1>Example Form</h1>
-            {isForm ? <Form submitForm={submitForm} /> : <Result submitForm={submitForm} />}
+            {isForm ? <Form submitForm={submitForm} passDataHandler={passDataHandler} /> : <Result submitForm={submitForm} data={data} />}
         </div>
     );
 }
