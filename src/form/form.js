@@ -1,21 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const initialState = {
-  email: "",
-  name: "",
-  address: "",
-  address2: "",
-  city: "",
-  state: "",
-  zip: "",
-  service: "",
-  usage: "",
-  comment: "",
-  genres: [],
-};
 
-function Form({ submitForm, passDataHandler }) {
-  const [formState, setFormState] = useState(initialState);
+
+function Form({ submitForm, passDataHandler, data, resetFormHandler }) {
+  const [formState, setFormState] = useState(data);
 
   function changeHandler(e) {
     setFormState({ ...formState, [e.target.id]: e.target.value });
@@ -28,10 +16,6 @@ function Form({ submitForm, passDataHandler }) {
       let temArr = [...formState.genres, e.target.value];
       setFormState({ ...formState, genres: temArr });
     }
-  }
-
-  function resetFormHandler() {
-    setFormState(initialState);
   }
 
   function formSubmitHandler(e) {
@@ -355,9 +339,7 @@ function Form({ submitForm, passDataHandler }) {
             Submit Form
           </button>
 
-            <button className="btn btn-success ms-3" onClick={resetFormHandler}>
-                Reset Form
-            </button>
+            <input type='button' className="btn btn-success ms-3" onClick={resetFormHandler} value='Reset Form' />
         </div>
       </form>
     </div>

@@ -4,6 +4,10 @@ function Result({ submitForm, data }) {
 
     const { email, name, address, address2, city, state, zip, service, usage, comment, genres } = data;
 
+    function returnToForm() {
+        submitForm(true, data);
+    }
+
     return (
         <div className="card result-card">
             <div className="row">
@@ -43,7 +47,7 @@ function Result({ submitForm, data }) {
                     <div className="result-label">
                         Genres: 
                         <div className="row row-cols-3 m-2">
-                            {genres.map(genre => <p className="col result-genre">{genre}</p>)}
+                            {genres.map(genre => <p key={genre} className="col result-genre">{genre}</p>)}
                         </div>
                     </div>
                     
@@ -54,7 +58,7 @@ function Result({ submitForm, data }) {
                     <p className="result-comment">{comment}</p>
                 </div>
 
-                <button className="result-btn" onClick={() => submitForm(true)}>Back to Form</button>
+                <button className="result-btn" onClick={returnToForm}>Back to Form</button>
             </div>
         </div>
     )
