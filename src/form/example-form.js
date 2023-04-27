@@ -3,23 +3,11 @@ import { useState } from "react";
 import Form from "./form";
 import Result from "./result";
 
-const initialState = {
-  email: "",
-  name: "",
-  address: "",
-  address2: "",
-  city: "",
-  state: "",
-  zip: "",
-  service: "",
-  usage: "",
-  comment: "",
-  genres: [],
-};
+
 
 function ExampleForm() {
   const [isForm, setIsForm] = useState(true);
-  const [data, setData] = useState(initialState);
+  const [data, setData] = useState({});
 
   function passDataHandler(data) {
     setData(data);
@@ -32,10 +20,6 @@ function ExampleForm() {
     }
   }
 
-  function resetFormHandler() {
-    setData(() => initialState);
-  }
-
   return (
     <div className="example-form-container">
       <h1>Example Form</h1>
@@ -44,7 +28,6 @@ function ExampleForm() {
           submitForm={submitForm}
           passDataHandler={passDataHandler}
           data={data}
-          resetFormHandler={resetFormHandler}
         />
       ) : (
         <Result submitForm={submitForm} data={data} />

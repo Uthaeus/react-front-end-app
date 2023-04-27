@@ -1,9 +1,27 @@
 import { useState, useEffect } from "react";
 
+const initialState = {
+    email: "",
+    name: "",
+    address: "",
+    address2: "",
+    city: "",
+    state: "",
+    zip: "",
+    service: "",
+    usage: "",
+    comment: "",
+    genres: [],
+  };
 
+function Form({ submitForm, passDataHandler, data }) {
+  const [formState, setFormState] = useState(initialState);
 
-function Form({ submitForm, passDataHandler, data, resetFormHandler }) {
-  const [formState, setFormState] = useState(data);
+    useEffect(() => {
+        if (Object.keys(data).length > 0) {
+            setFormState(data);
+        }
+    }, [data]);
 
   function changeHandler(e) {
     setFormState({ ...formState, [e.target.id]: e.target.value });
@@ -16,6 +34,10 @@ function Form({ submitForm, passDataHandler, data, resetFormHandler }) {
       let temArr = [...formState.genres, e.target.value];
       setFormState({ ...formState, genres: temArr });
     }
+  }
+
+  function resetFormHandler() {
+    setFormState(initialState);
   }
 
   function formSubmitHandler(e) {
