@@ -8,9 +8,14 @@ import Result from "./result";
 function ExampleForm() {
   const [isForm, setIsForm] = useState(true);
   const [data, setData] = useState({});
+  const [notice, setNotice] = useState("");
 
   function passDataHandler(data) {
     setData(data);
+  }
+
+  function dataSubmitHandler() {
+    setNotice("Data submitted! (not really, this is just a demo)");
   }
 
   function submitForm(m, d = null) {
@@ -23,6 +28,7 @@ function ExampleForm() {
   return (
     <div className="example-form-container">
       <h1>Example Form</h1>
+      {notice.length > 0 && <p className="notice">{notice}</p>}
       {isForm ? (
         <Form
           submitForm={submitForm}
@@ -30,7 +36,7 @@ function ExampleForm() {
           data={data}
         />
       ) : (
-        <Result submitForm={submitForm} data={data} />
+        <Result submitForm={submitForm} data={data} dataSubmitHandler={dataSubmitHandler} />
       )}
     </div>
   );

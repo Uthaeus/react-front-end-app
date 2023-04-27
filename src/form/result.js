@@ -1,11 +1,16 @@
 
 
-function Result({ submitForm, data }) {
+function Result({ submitForm, data, dataSubmitHandler }) {
 
     const { email, name, address, address2, city, state, zip, service, usage, comment, genres } = data;
 
     function returnToForm() {
         submitForm(true, data);
+    }
+
+    function dataSubmit() {
+        submitForm(true);
+        dataSubmitHandler();
     }
 
     return (
@@ -58,7 +63,13 @@ function Result({ submitForm, data }) {
                     <p className="result-comment">{comment}</p>
                 </div>
 
-                <button className="result-btn" onClick={returnToForm}>Back to Form</button>
+                <div className="col-md-6">
+                    <button className="result-btn back" onClick={returnToForm}>Back to Form</button>
+                </div>
+
+                <div className="col-md-6">
+                    <button className="result-btn sub" onClick={dataSubmit}>Submit Data</button>
+                </div>
             </div>
         </div>
     )
