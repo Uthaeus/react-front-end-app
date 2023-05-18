@@ -14,7 +14,13 @@ function ExampleForm() {
     setData(data);
   }
 
+  function resetFormHandler() {
+    setIsForm(true);
+    setData({});
+  }
+
   function dataSubmitHandler() {
+    resetFormHandler();
     setNotice("Data submitted! (not really, this is just a demo)");
   }
 
@@ -36,6 +42,7 @@ function ExampleForm() {
           submitForm={submitForm}
           passDataHandler={passDataHandler}
           data={data}
+          resetFormHandler={resetFormHandler}
         />
       ) : (
         <Result submitForm={submitForm} data={data} dataSubmitHandler={dataSubmitHandler} />

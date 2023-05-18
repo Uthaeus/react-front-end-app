@@ -12,8 +12,7 @@
 
 .notice {
     width: 100%;
-    min-height: 15px;
-    padding: 5px 15px;
+    max-height: 25px;
     background-color: #25785f23;
     border-radius: 3px;
     border: 1px solid rgba(128, 128, 128, 0.221);
@@ -25,10 +24,12 @@
     .notice-message {
         color: #25785e;
         margin-left: 1rem;
+        margin-bottom: -3px;
     }
 
     .notice-btn {
         padding: 2px;
+        font-size: 0.7em;
         background-color: transparent;
         color: #25785e;
         border: 1px solid #25785e;
@@ -108,4 +109,10 @@
         width: 95%;
         background-color: rgb(125, 168, 210);
     }
+}
+
+.form-error {
+    color: rgb(188, 95, 95);
+    padding: 2px 12px;
+    font-size: 0.8rem;
 }
