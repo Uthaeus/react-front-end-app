@@ -60,6 +60,14 @@ function MainNavigation() {
       >
         Example Form
       </NavLink>
+      <NavLink
+        to="/css-examples"
+        className={({ isActive }) =>
+          isActive ? "nav-link active" : "nav-link"
+        }
+      >
+        CSS Examples
+      </NavLink>
     </div>
   );
 }

@@ -10,6 +10,7 @@ import DrumMachine from "./drum/drum";
 import PomodoroClock from "./pomodoro/pomodoro";
 import Markdown from "./markdown/markdown";
 import ExampleForm from "./form/example-form";
+import CssExamples from "./examples/css-examples";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: "/example-form",
         element: <ExampleForm />
+      },
+      {
+        path: "/css-examples",
+        element: <CssExamples />
       }
     ]
   }
