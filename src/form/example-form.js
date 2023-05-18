@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import Form from "./form";
 import Result from "./result";
-
+import Notice from "./notice";
 
 
 function ExampleForm() {
@@ -25,10 +25,12 @@ function ExampleForm() {
     }
   }
 
+
+
   return (
     <div className="example-form-container">
       <h1>Example Form</h1>
-      {notice.length > 0 && <p className="notice">{notice}</p>}
+      {notice.length > 0 && <Notice message={notice} />}
       {isForm ? (
         <Form
           submitForm={submitForm}
