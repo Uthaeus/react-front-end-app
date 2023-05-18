@@ -1,0 +1,101 @@
+
+.css-examples-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .css-examples-title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 1rem;
+    }
+
+    .css-examples-content {
+        width: 100%;
+        padding: 2rem;
+        margin: 1rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.content-btn {
+    border-radius: 3px;
+    overflow: hidden;
+    background-color: #205a50;
+    color: #fff;
+    padding: 2px 1rem;
+    box-shadow: 3px 3px 5px rgba(82, 79, 79, 0.5);
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        background-color: #1a473e;
+        box-shadow: 4px 4px 7px rgba(82, 79, 79, 0.5);
+        transform: scale(1.05);
+    }
+}
+
+.title-fade-in {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 1rem;
+    color: #d4aa4f;
+}
+
+.title-fade-in-out {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 1rem;
+    color: #4fd48b;
+}
+
+.title-slide-in {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 1rem;
+    color: #4f9dd4;
+}
+
+.fade-in {
+    animation: fade-in 3s ease-in-out;
+}
+
+.fade-in-out {
+    animation: fade-in-out 5s ease-in-out;
+}
+
+.slide-in {
+    animation: slide-in 3s ease-in-out;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-out {
+    0%, 100% {
+        opacity: 0;
+    }
+    30%, 70% {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+    
