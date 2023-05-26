@@ -181,7 +181,7 @@
 .fake-post-container {
     width: 100%;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 2fr;
 
     .fake-post-left-column {
         margin: 1rem;
@@ -196,5 +196,17 @@
             color: rgb(42, 36, 9);
             text-decoration: underline;
         }
+
+        .fake-post-body {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin: 1rem;
+            color: rgb(3, 2, 2);
+        }
+    }
+
+    .fake-post-right-column {
+        margin-top: 3rem;
+        border-bottom: 1px solid rgb(42, 36, 9);
     }
 }

@@ -68,6 +68,14 @@ function MainNavigation() {
       >
         CSS Examples
       </NavLink>
+      <NavLink
+        to="/comment-example"
+        className={({ isActive }) =>
+          isActive ? "nav-link active" : "nav-link"
+        }
+      >
+        Comment Example
+      </NavLink>
     </div>
   );
 }

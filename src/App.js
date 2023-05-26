@@ -11,6 +11,7 @@ import PomodoroClock from "./pomodoro/pomodoro";
 import Markdown from "./markdown/markdown";
 import ExampleForm from "./form/example-form";
 import CssExamples from "./examples/css-examples";
+import CommentExample from "./examples/comment-example";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
       {
         path: "/css-examples",
         element: <CssExamples />
+      },
+      {
+        path: "/comment-example",
+        element: <CommentExample />
       }
     ]
   }

@@ -1,0 +1,78 @@
+
+.comment-example-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .comment-example-comments-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin: 1rem 0;
+
+        .comment-example-form-wrapper {
+            width: 40%;
+            padding: 2rem;
+
+            .comment-example-submit {
+                width: 25%;
+                float: right;
+                border-radius: 2px;
+                background-color: rgb(32, 32, 199);
+                color: white;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    background-color: rgb(0, 0, 255, 0.7);
+                    transform: scale(1.05);
+                }
+            }
+        }
+
+        .comment-example-comments {
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            .comments-title {
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: rgb(77, 180, 187);
+            }
+
+            .comment-item-wrapper {
+                width: 96%;
+                display: flex;
+                flex-direction: column;
+                padding: 0 0.5rem;
+                margin: 0.5rem auto;
+                background-color: antiquewhite;
+                border-radius: 5px;
+
+                .posted-by {
+                    text-align: right;
+                    font-size: 0.8rem;
+                    color: rgb(104, 106, 106);
+                }
+
+                .comment-item-body {
+                    font-size: 1rem;
+                    font-weight: 500;
+                    color: rgb(2, 28, 30);
+                }
+
+                .comment-item-name {
+                    
+                    font-size: 0.9rem;
+                    font-weight: 500;
+                    color: rgb(4, 81, 81);
+                }
+            }
+        }
+    }
+}
+
+// Comment Form 
+
