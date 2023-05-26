@@ -1,0 +1,32 @@
+
+.blog-container {
+    width: 100%;
+
+    .blog-header {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .blog-content {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+
+        .blog-main {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .blog-sidebar {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(180deg, #ffffff31 0%, #f2f2f219 100%);
+        }
+    }
+}
