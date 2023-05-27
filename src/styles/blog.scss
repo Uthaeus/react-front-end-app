@@ -97,3 +97,44 @@
         }
     }
 }
+
+// Blog Detail 
+
+.blog-detail {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+
+    .blog-detail-header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        .blog-detail-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: rgb(35, 123, 153);
+        }
+
+        .blog-detail-poster {
+            font-size: 0.9em;
+            font-weight: bold;
+            color: rgb(131, 44, 44);
+        }
+
+        .blog-detail-subtitle {
+            font-size: 1.2em;
+            color: rgb(3, 3, 3);
+        }
+    }
+
+    .blog-detail-content {
+        width: 100%;
+        margin: 1rem 0;
+        padding: 1rem;
+        border: 1px solid #4d030331;
+        border-radius: 2px;
+        background: linear-gradient(180deg, #26262631 0%, #0a0a0a19 100%);
+    }
+}

@@ -1,12 +1,25 @@
 import { useOutletContext } from "react-router";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import { DUMMY_BLOGS } from "./DUMMY_BLOGS";
 import BlogItem from "./blog-item";
+import BlogDetail from "./blog-detail";
 
 function Blog() {
     const [user] = useOutletContext();
     const [blogs, setBlogs] = useState(DUMMY_BLOGS);
+    const [blog, setBlog] = useState(null); 
+
+    function isBlogDetailHandler(b) {
+        setBlog(b);
+    }
+
+    function newBlogHandler(blog) {
+        setBlogs(prevBlogs => {
+            return [blog, ...prevBlogs];
+        });
+    }
 
     return (
         <div className="blog-container">
@@ -19,7 +32,8 @@ function Blog() {
 
             <div className="blog-content">
                 <div className="blog-main">
-                    {blogs.map(blog => <BlogItem key={blog.id} blog={blog} />)}
+                    {blog && <BlogDetail isBlogDetailHandler={isBlogDetailHandler} />}
+                    {blogs.map(blog => <Link onClick={() => isBlogDetailHandler(blog)}><BlogItem key={blog.id} blog={blog} /></Link>)}
                 </div>
 
                 <div className="blog-sidebar">
