@@ -4,28 +4,96 @@
 
     .blog-header {
         width: 100%;
+        height: 200px;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-direction: column;
+        margin-bottom: 1.5rem;
+        border-bottom: 1px solid #4d030331;
+        padding: 1rem 3rem;
+        background: linear-gradient(180deg, #262626 0%, #0a0a0a 100%);
+
+        .blog-header-title {
+            text-align: center;
+            font-size: 2.5em;
+            font-weight: bold;
+            color: rgb(35, 123, 153);
+        }
+
+        .blog-header-welcome {
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-align: right;
+            color: rgb(35, 123, 153);
+        }
+
+        .blog-header-subtitle {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: right;
+            color: rgb(131, 44, 44);
+        }
+
+        .blog-header-button {
+            width: 125px;
+            height: 35px;
+            border-radius: 2px;
+            background-color: rgb(35, 123, 153);
+            color: rgb(250, 250, 231);
+        }
     }
 
     .blog-content {
         width: 100%;
         display: grid;
-        grid-template-columns: 3fr 1fr;
+        grid-template-columns: 2fr 1fr;
 
         .blog-main {
             width: 100%;
             display: flex;
             flex-direction: column;
+            padding: 2rem;
         }
 
         .blog-sidebar {
-            width: 100%;
+            width: 96%;
+            margin: 0 auto;
+            padding: 1rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            background: linear-gradient(180deg, #ffffff31 0%, #f2f2f219 100%);
+            background: linear-gradient(180deg, #26262631 0%, #0a0a0a19 100%);
+        }
+    }
+}
+
+// Blog Item 
+
+.blog-item {
+    width: 60%;
+    margin: 1rem 0;
+    padding: 1rem;
+
+    .blog-item-header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        .blog-item-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: rgb(35, 123, 153);
+        }
+
+        .blog-item-poster {
+            font-size: 0.9em;
+            font-weight: bold;
+            color: rgb(131, 44, 44);
+        }
+
+        .blog-item-subtitle {
+            font-size: 1.2em;
+            color: rgb(3, 3, 3);
         }
     }
 }

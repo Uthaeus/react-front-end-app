@@ -4,14 +4,24 @@
     display: flex;
     flex-direction: column;
     padding: 1rem;
+    position: relative;
 
     .blog-navigation-header {
         width: 100%;
-        min-height: 150px;
+        height: 200px;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        justify-content: space-between;
         align-items: center;
         margin-bottom: 1rem;
+        border-bottom: 1px solid #4d030331;
+
+        .blog-nav-user {
+            font-size: 1.1em;
+            font-weight: bold;
+            text-align: right;
+            color: red;
+        }
     }
 
     .blog-navigation-links {
@@ -19,7 +29,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        align-items: flex-start;
+        align-items: flex-end;
 
         
     }
@@ -29,36 +39,53 @@
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        align-items: flex-start;
+        align-items: flex-end;
         margin-top: 1rem;
-        border-top: 1px solid #ffffff31;
+        border-top: 1px solid #4d030331;
     }
 
     .blog-link {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0.5rem;
-        border-radius: 0.5rem;
-        margin-bottom: 0.5rem;
-        transition: all 0.2s ease-in-out;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        color: rgb(6, 65, 6);
+        transition: all 0.3s ease-in-out;
 
         &:hover {
-            background: linear-gradient(180deg, #ffffff31 0%, #f2f2f219 100%);
-        }
-
-        .blog-navigation-link-icon {
-            font-size: 1.5rem;
-            margin-right: 0.5rem;
-        }
-
-        .blog-navigation-link-text {
-            font-size: 1.2rem;
+            color: rgba(122, 159, 199, 0.948);
+            transform: scale(1.1);
         }
     }
 
     .link-active {
-        background: linear-gradient(180deg, #ffffff31 0%, #f2f2f219 100%);
+        color:rgba(40, 64, 91, 0.948);
+        transform: scale(1.1);
     }
+}
+
+.blog-login-form-container {
+    width: 200px;
+    height: 150px;
+    left: -550px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    position: absolute;
+    padding: 1rem;
+    transition: all 0.6s ease-in-out;
+
+    .blog-login-form-header {
+        width: 100%;
+
+        .login-form-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            text-align: right;
+            text-decoration: underline;
+            color: rgb(19, 61, 87);
+        }
+    }
+}
+
+.blog-login-form-container-active {
+    transform: translateX(755px);
 }
