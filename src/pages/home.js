@@ -1,8 +1,9 @@
 function HomePage() {
   return (
-    <div className="container">
-      <h2>Welcome to Next.js!</h2>
-      <button className="btn btn-primary">Click me</button>
+    <div className="home-container">
+      <h2 className="home-title">Welcome!</h2>
+      <p className="home-subtitle">These are just a collection of practice and challenge projects</p>
+      <p className="home-subtitle">Please have a look around</p>
     </div>
   );
 }
