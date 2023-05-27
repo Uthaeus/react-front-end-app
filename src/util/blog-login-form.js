@@ -20,7 +20,7 @@ function BlogLoginForm({ loginHandler }) {
                 <p className="login-form-title">log on in!</p>
             </div>
 
-            <div className="form-group mb-2">
+            <div className="form-group mb-3">
                 <label htmlFor="username">Username</label>
                 <input type="text" id="username" className="form-control" onChange={usernameChangeHandler} value={username}  />
             </div>

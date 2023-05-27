@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { DUMMY_BLOGS } from "./DUMMY_BLOGS";
 import BlogItem from "./blog-item";
 import BlogDetail from "./blog-detail";
+import BlogSidebar from "./blog-sidebar";
 
 function Blog() {
     const [user] = useOutletContext();
@@ -36,17 +37,7 @@ function Blog() {
                     {blogs.map(blog => <Link className="blog-item-link" onClick={() => isBlogDetailHandler(blog)}><BlogItem key={blog.id} blog={blog} /></Link>)}
                 </div>
 
-                <div className="blog-sidebar">
-                    <h4 className="categories-title">Categories</h4>
-                    <div className="categories-wrapper">
-                        <p className="categories-item">Post 1</p>
-                    </div>
-
-                    <h5 className="socials-title">Socials</h5>
-                    <div className="socials-wrapper">
-                        <p className="socials-item">Instagram</p>
-                    </div>
-                </div>
+                <BlogSidebar />
             </div>
         </div>
     );

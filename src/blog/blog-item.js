@@ -23,7 +23,7 @@ function BlogItem({ blog }) {
                 <h3 className="blog-item-title">{blog.title}</h3>
                 <p className="blog-item-poster">Posted By {blog.poster} {distanceInTime(blog.date)} ago.</p>
             </div>
-            <p className="blog-item-subtitle">{truncateContent(blog.content)}</p>
+            <p className="blog-item-content">{truncateContent(blog.content)}</p>
         </div>
     );
 }
