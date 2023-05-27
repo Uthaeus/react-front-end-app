@@ -1,3 +1,5 @@
+@import "main-navigation";
+
 @import 'home';
 @import 'calculator';
 @import 'quote';
@@ -7,7 +9,7 @@
 @import 'example-form';
 @import 'examples';
 @import 'comment-example';
-@import 'blog';
+
 
 body {
     min-height: 100vh;

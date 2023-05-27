@@ -77,7 +77,7 @@ function MainNavigation() {
         Comment Example
       </NavLink>
       <NavLink
-        to="/blog"
+        to="/blogs"
         className={({ isActive }) =>
           isActive ? "nav-link active" : "nav-link"
         }
