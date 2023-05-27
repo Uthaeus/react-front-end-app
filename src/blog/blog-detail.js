@@ -1,5 +1,6 @@
 
 function BlogDetail({ blog, isBlogDetailHandler }) {
+
     return (
         <div className="blog-detail">
             <h1 className="blog-detail-title">{blog.title}</h1>
@@ -10,7 +11,7 @@ function BlogDetail({ blog, isBlogDetailHandler }) {
 
                 <p className="blog-detail-date">{blog.date}</p>
 
-                <p onClick={isBlogDetailHandler} className="blog-detail-back">Back</p>
+                <p onClick={() => isBlogDetailHandler(null)} className="blog-detail-back">Close</p>
             </div>
         </div>
     );

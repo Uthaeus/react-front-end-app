@@ -32,8 +32,8 @@ function Blog() {
 
             <div className="blog-content">
                 <div className="blog-main">
-                    {blog && <BlogDetail isBlogDetailHandler={isBlogDetailHandler} />}
-                    {blogs.map(blog => <Link onClick={() => isBlogDetailHandler(blog)}><BlogItem key={blog.id} blog={blog} /></Link>)}
+                    {blog && <BlogDetail blog={blog} isBlogDetailHandler={isBlogDetailHandler} />}
+                    {blogs.map(blog => <Link className="blog-item-link" onClick={() => isBlogDetailHandler(blog)}><BlogItem key={blog.id} blog={blog} /></Link>)}
                 </div>
 
                 <div className="blog-sidebar">
