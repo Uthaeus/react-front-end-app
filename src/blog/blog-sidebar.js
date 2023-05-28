@@ -1,15 +1,12 @@
-import { useState } from "react";
 
-import { DUMMY_CATEGORIES } from "./dummy_data";
 
-function BlogSidebar({ blogFilterHandler, addCategoryHandler }) {
-    const [categories, setCategories] = useState(DUMMY_CATEGORIES);
+function BlogSidebar({ blogFilterHandler, categories }) {
 
     return (
         <div className="blog-sidebar">
             <h4 className="categories-title">Categories</h4>
             <div className="categories-wrapper">
-                {categories.map(category => <p key={category.id} className="categories-item">{category.name}</p>)}
+                {categories?.map(category => <p onClick={() => blogFilterHandler(category.name)} key={category.id} className="categories-item">{category.name}</p>)}
             </div>
 
             <h5 className="socials-title">Socials</h5>

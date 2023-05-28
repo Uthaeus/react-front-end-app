@@ -2,16 +2,16 @@ import { useOutletContext } from "react-router";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import { DUMMY_BLOGS } from "./dummy_data";
+import { DUMMY_BLOGS, DUMMY_CATEGORIES } from "./dummy_data";
 import BlogItem from "./blog-item";
 import BlogDetail from "./blog-detail";
 import BlogSidebar from "./blog-sidebar";
 import BlogForm from "./blog-form";
-import { set } from "react-hook-form";
 
 function Blog() {
     const [user] = useOutletContext();
     const [blogs, setBlogs] = useState(DUMMY_BLOGS);
+    const [categories, setCategories] = useState(DUMMY_CATEGORIES); 
     const [blog, setBlog] = useState(null); 
     const [showForm, setShowForm] = useState(false);
 
@@ -22,6 +22,13 @@ function Blog() {
         } else {
             setBlog(null);
         }
+    }
+
+    function blogFilterHandler(category) {
+        setBlogs(blogs => {
+            let filteredBlogs = blogs.filter(blog => blog.category === category);
+            return filteredBlogs;
+        });
     }
 
     function toggleSignIn() {
@@ -60,7 +67,7 @@ function Blog() {
                     {blogs.map(blog => <Link key={blog.id} className="blog-item-link" onClick={() => isBlogDetailHandler(blog)}><BlogItem blog={blog} /></Link>)}
                 </div>
 
-                <BlogSidebar />
+                <BlogSidebar categories={categories} blogFilterHandler={blogFilterHandler} />
             </div>
         </div>
     );
