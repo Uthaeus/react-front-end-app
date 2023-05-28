@@ -2,7 +2,7 @@ import { useOutletContext } from "react-router";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import { DUMMY_BLOGS } from "./DUMMY_BLOGS";
+import { DUMMY_BLOGS } from "./dummy_data";
 import BlogItem from "./blog-item";
 import BlogDetail from "./blog-detail";
 import BlogSidebar from "./blog-sidebar";
@@ -24,6 +24,11 @@ function Blog() {
         }
     }
 
+    function toggleSignIn() {
+        let element = document.querySelector('.blog-login-form-container');
+        element.classList.toggle('blog-login-form-container-active');
+    }
+
     function newBlogHandler(blog) {
         setBlogs(prevBlogs => {
             return [blog, ...prevBlogs];
@@ -43,7 +48,7 @@ function Blog() {
                 <h1 className="blog-header-title">Blog Header</h1>
                 <h3 className="blog-header-welcome">Howdy {user ? user.username : 'Partner'}!</h3>
                 <p className="blog-header-subtitle">Feel free to share any tech related ideas.</p>
-                <button onClick={toggleBlogForm} disabled={!user} className="blog-header-button">{user && showForm ? 'Close Form' : user ? 'Create Post' : 'Sign In'}</button>
+                <button onClick={user ? toggleBlogForm : toggleSignIn } className="blog-header-button">{user && showForm ? 'Close Form' : user ? 'Create Post' : 'Sign In'}</button>
             </div>
 
             

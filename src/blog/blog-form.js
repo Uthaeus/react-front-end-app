@@ -21,7 +21,7 @@ function BlogForm({ user, blog, newBlogHandler }) {
 
         newBlogHandler(newBlog);
         reset();
-        window.alert('Blog created successfully!');
+        console.log('Blog created successfully!');
     }
 
     return (

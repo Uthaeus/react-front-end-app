@@ -14,6 +14,8 @@ function BlogLayout() {
         setUser(null);
     }
 
+    
+
   return (
     <div className="blog-layout">
         <BlogNavigation setUserHandler={setUserHandler} clearUserHandler={clearUserHandler} />
