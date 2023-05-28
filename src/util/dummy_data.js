@@ -31,6 +31,22 @@ export const DUMMY_BLOGS = [
         poster: 'Judy',
         date: '2023-04-04',
         category: 'Python'
+    },
+    {
+        id: 'blog5',
+        title: 'Blog 5',
+        content: "I'm trying to use the new React Router v6, but I'm having trouble with the useNavigate hook. I'm trying to use it in a function, but I'm getting the following error:",
+        poster: 'Steve',
+        date: '2023-04-05',
+        category: 'Java'
+    },
+    {
+        id: 'blog6',
+        title: 'Blog 6',
+        content: "I'm trying to use the new React Router v6, but I'm having trouble with the useNavigate hook. I'm trying to use it in a function, but I'm getting the following error:",
+        poster: 'Barb',
+        date: '2023-04-06',
+        category: 'C#'
     }
 ];
 
@@ -87,5 +103,78 @@ export const DUMMY_USERS = [
         name: 'Barb',
         email: 'barb@example.com',
         role: 'user',
+    }
+];
+
+export const DUMMY_COMMENTS = [
+    {
+        id: 'comment1',
+        content: 'This is a comment',
+        poster: 'Mark',
+        date: '2023-03-01',
+        blog: 'blog1'
+    },
+    {
+        id: 'comment2',
+        content: 'This is another comment',
+        poster: 'Judy',
+        date: '2023-03-02',
+        blog: 'blog1'
+    },
+    {
+        id: 'comment3',
+        content: 'This is a comment',
+        poster: 'Mark',
+        date: '2023-03-03',
+        blog: 'blog2'
+    },
+    {
+        id: 'comment4',
+        content: 'This is another comment',
+        poster: 'Judy',
+        date: '2023-03-04',
+        blog: 'blog2'
+    },
+    {
+        id: 'comment5',
+        content: 'This is a comment',
+        poster: 'Mark',
+        date: '2023-03-05',
+        blog: 'blog3'
+    },
+    {
+        id: 'comment6',
+        content: 'This is another comment',
+        poster: 'Judy',
+        date: '2023-03-06',
+        blog: 'blog3'
+    },
+    {
+        id: 'comment7',
+        content: 'This is a comment',
+        poster: 'Barb',
+        date: '2023-03-07',
+        blog: 'blog4'
+    },
+    {
+        id: 'comment8',
+        content: 'This is another comment',
+        poster: 'Steve',
+        date: '2023-03-08',
+        blog: 'blog4'
+    },
+    {
+        id: 'comment9',
+        content: 'This is a comment',
+        poster: 'Barb',
+        date: '2023-03-09',
+        blog: 'blog5'
+    },
+    {
+        id: 'comment10',
+        content: 'This is another comment',
+        poster: 'Judy',
+        date: '2023-03-10',
+        blog: 'blog5'
     }
 ];
