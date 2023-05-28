@@ -16,12 +16,16 @@ function Blog() {
     const [showForm, setShowForm] = useState(false);
 
     function isBlogDetailHandler(b) {
-        console.log('Blog Detail Handler', b);
-        if (b) {
+        let element = document.querySelector('.blog-detail');
+        element.classList.toggle('blog-detail-slide-in');
+
+        let blogItemsElement = document.querySelector('.blog-items-list-wrapper');
+
+        blogItemsElement.classList.toggle('blog-items-slide-down');
+
+        setTimeout(() => {
             setBlog(b);
-        } else {
-            setBlog(null);
-        }
+        }, 600);
     }
 
     function blogFilterHandler(category) {
@@ -45,12 +49,9 @@ function Blog() {
 
     function toggleBlogForm() {
         let element = document.querySelector('.blog-form-container');
-        let blogItemsElement = document.querySelector('.blog-item-link').firstChild;
+        let blogItemsElement = document.querySelector('.blog-items-list-wrapper');
 
-        setTimeout(() => {
-
-            blogItemsElement.classList.toggle('blog-items-top-margin');
-        }, 350);
+        blogItemsElement.classList.toggle('blog-items-slide-down');
 
         element.classList.toggle('blog-form-container-active');
         setShowForm(!showForm);
@@ -59,10 +60,16 @@ function Blog() {
     return (
         <div className="blog-container">
             <div className="blog-header">
-                <h1 className="blog-header-title">Blog Header</h1>
-                <h3 className="blog-header-welcome">Howdy {user ? user.username : 'Partner'}!</h3>
-                <p className="blog-header-subtitle">Feel free to share any tech related ideas.</p>
-                <button onClick={user ? toggleBlogForm : toggleSignIn } className="blog-header-button">{user && showForm ? 'Close Form' : user ? 'Create Post' : 'Sign In'}</button>
+                <div className="blog-header-title-wrapper">
+                    <h1 className="blog-header-title">Blog Header</h1>
+                    <button onClick={user ? toggleBlogForm : toggleSignIn } className="blog-header-button">{user && showForm ? 'Close Form' : user ? 'Create Post' : 'Sign In'}</button>
+                </div>
+
+                <div className="blog-header-content-wrapper">
+                    <h3 className="blog-header-welcome">Howdy {user ? user.username : 'Partner'}!</h3>
+                    <p className="blog-header-subtitle">You can create a blog post after signing in, filter posts by categories listed in sidebar. Only for demonstration purposes, any new posts/users created will be gone on refresh</p>
+                </div>
+                
             </div>
 
             
@@ -71,9 +78,11 @@ function Blog() {
                 <div className="blog-main">
                     <BlogForm user={user} newBlogHandler={newBlogHandler} blog={blog} />
 
-                    {blog && <BlogDetail blog={blog} isBlogDetailHandler={isBlogDetailHandler} />}
+                    <BlogDetail blog={blog} isBlogDetailHandler={isBlogDetailHandler} />
 
-                    {blogs.map(blog => <Link key={blog.id} className="blog-item-link" onClick={() => isBlogDetailHandler(blog)}><BlogItem blog={blog} /></Link>)}
+                    <div className="blog-items-list-wrapper">
+                        {blogs.map(blog => <Link key={blog.id} className="blog-item-link" onClick={() => isBlogDetailHandler(blog)}><BlogItem blog={blog} /></Link>)}
+                    </div>
                 </div>
 
                 <BlogSidebar categories={categories} blogFilterHandler={blogFilterHandler} />
