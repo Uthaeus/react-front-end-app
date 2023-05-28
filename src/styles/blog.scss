@@ -75,6 +75,25 @@
     flex-direction: column;
     background: linear-gradient(180deg, #26262631 0%, #0a0a0a19 100%);
 
+    .categories-title-wrapper {
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+
+        .reset-filter-btn {
+            margin-left: 1.5rem;
+            text-decoration: underline;
+            padding-bottom: 0.4rem;
+            color: rgb(63, 52, 52);
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.05);
+            }
+        }
+    }
+
     .categories-title {
         padding: 1rem 0;
         font-size: 1.5em;

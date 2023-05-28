@@ -7,10 +7,12 @@ import BlogItem from "./blog-item";
 import BlogDetail from "./blog-detail";
 import BlogSidebar from "./blog-sidebar";
 import BlogForm from "./blog-form";
+import { set } from "react-hook-form";
 
 function Blog() {
     const [user] = useOutletContext();
     const [blogs, setBlogs] = useState(DUMMY_BLOGS);
+    const [blogDisplayList, setBlogDisplayList] = useState(blogs);
     const [categories, setCategories] = useState(DUMMY_CATEGORIES); 
     const [blog, setBlog] = useState(null); 
     const [showForm, setShowForm] = useState(false);
@@ -28,11 +30,12 @@ function Blog() {
         }, 600);
     }
 
-    function blogFilterHandler(category) {
-        setBlogs(blogs => {
-            let filteredBlogs = blogs.filter(blog => blog.category === category);
-            return filteredBlogs;
-        });
+    function blogFilterHandler(category = null) {
+        if (!category) {
+            setBlogDisplayList(blogs);
+        } else {
+            setBlogDisplayList(blogs.filter(blog => blog.category === category));
+        }
     }
 
     function toggleSignIn() {
@@ -42,6 +45,9 @@ function Blog() {
 
     function newBlogHandler(blog) {
         setBlogs(prevBlogs => {
+            return [blog, ...prevBlogs];
+        });
+        setBlogDisplayList(prevBlogs => {
             return [blog, ...prevBlogs];
         });
         toggleBlogForm();
@@ -81,7 +87,7 @@ function Blog() {
                     <BlogDetail blog={blog} isBlogDetailHandler={isBlogDetailHandler} />
 
                     <div className="blog-items-list-wrapper">
-                        {blogs.map(blog => <Link key={blog.id} className="blog-item-link" onClick={() => isBlogDetailHandler(blog)}><BlogItem blog={blog} /></Link>)}
+                        {blogDisplayList.map(blog => <Link key={blog.id} className="blog-item-link" onClick={() => isBlogDetailHandler(blog)}><BlogItem blog={blog} /></Link>)}
                     </div>
                 </div>
 
