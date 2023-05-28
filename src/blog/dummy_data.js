@@ -5,20 +5,54 @@ export const DUMMY_BLOGS = [
         title: 'Blog 1',
         content: 'As far as I can tell, this only seems to support functional components. Is there any equivalent for class components, which are used in the question?',
         poster: 'Mark',
-        date: '2023-03-01'
+        date: '2023-03-01',
+        category: 'Ruby'
     },
     {
         id: 'blog2',
         title: 'Blog 2',
         content: "I can't manage to pass props to my Outlet components in the new react-router v6. I tried the straightforward solution:",
         poster: 'Mark',
-        date: '2023-04-02'
+        date: '2023-04-02',
+        category: 'JavaScript'
     },
     {
         id: 'blog3',
         title: 'Blog 3',
         content: "And that correctly renders the child component, however no props are passed to the child. None of the examples provided by the React team (or anyone else for that matter) display Outlets with props, so I'm worried it's not actually a thing. Is there another way I'm not finding or am I using Output components incorrectly?",
         poster: 'Judy',
-        date: '2023-04-03'
+        date: '2023-04-03',
+        category: 'JavaScript'
+    },
+    {
+        id: 'blog4',
+        title: 'Blog 4',
+        content: "I'm trying to use the new React Router v6, but I'm having trouble with the useNavigate hook. I'm trying to use it in a function, but I'm getting the following error:",
+        poster: 'Judy',
+        date: '2023-04-04',
+        category: 'Python'
+    }
+];
+
+export const DUMMY_CATEGORIES = [
+    {
+        id: 'cat1',
+        name: 'Ruby'
+    },
+    {
+        id: 'cat2',
+        name: 'JavaScript'
+    },
+    {
+        id: 'cat3',
+        name: 'Python'
+    },
+    {
+        id: 'cat4',
+        name: 'Java'
+    },
+    {
+        id: 'cat5',
+        name: 'C#'
     }
 ];
