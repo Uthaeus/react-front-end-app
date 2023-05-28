@@ -3,4 +3,89 @@
     width: 100%;
     min-height: 100vh;
     padding: 1rem 2rem;
+    position: relative;
+    overflow: hidden;
+
+    .admin-main-title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: rgb(44, 44, 45);
+    }
+
+    .admin-main-content {
+        display: flex;
+        flex-direction: column;
+        width: 75%;
+        min-height: 200px;
+        margin: 2rem auto;
+        border: 1px solid black;
+
+        .content-header {
+            width: 100%;
+            height: 27px;
+            display: grid;
+            grid-template-columns: 2fr 2fr 1fr 1fr 1fr;
+            background-color: rgb(209, 208, 208);
+            color: #3b3a3a;
+            border-bottom: 1px solid #161616;
+
+            .header-item {
+                padding: 0 0.5rem;
+
+                &:nth-last-child(n+2) {
+                    border-right: 1px solid black;
+                }
+            }
+
+            
+        }
+    }
+}
+
+// Admin User Item
+
+.admin-user-item {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr 1fr;
+    border-bottom: 1px solid #161616;
+
+    .user-item {
+        padding-left: 1rem;
+        color: #161616;
+        font-size: 1.2em;
+        transform: translateY(10%);
+    }
+
+    .user-link {
+        color: #161616;
+        text-decoration: none;
+        font-size: 1.4em;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+            color: #865a8a;
+        }
+    }
+}
+
+// Admin User Detail
+
+.admin-user-detail-slide-in {
+    transform: translateX(1500px);
+}
+
+.admin-user-detail-container {
+    width: 100%;
+    min-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+    position: absolute;
+    left: -1500px;
+    z-index: 100;
+    transition: all 0.5s ease-in-out;
 }
