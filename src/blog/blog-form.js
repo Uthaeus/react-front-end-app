@@ -16,7 +16,8 @@ function BlogForm({ user, blog, newBlogHandler }) {
             title: data.title,
             content: data.content,
             poster: user.username,
-            date: new Date().toISOString()
+            date: new Date().toISOString(),
+            category: data.category
         };
 
         newBlogHandler(newBlog);
@@ -25,10 +26,22 @@ function BlogForm({ user, blog, newBlogHandler }) {
     }
 
     return (
-        <div className="blog-form-container hide-blog-form">
+        <div className="blog-form-container">
             <h2 className="blog-form-title">{blog ? 'Edit Post' : 'Create Post'}</h2>
 
             <form className="blog-form" onSubmit={handleSubmit(onSubmit)}>
+                <div className="form-group mb-2">
+                    <label htmlFor="category">Category</label>
+                    <select className="form-control" {...register('category', { required: true })}>
+                        <option value="">Select a category</option>
+                        <option value="Ruby">Ruby</option>
+                        <option value="Javascript">Javascript</option>
+                        <option value="Python">Python</option>
+                        <option value="Java">Java</option>
+                        <option value="C#">C#</option>
+                    </select>
+                </div>
+
                 <div className="form-group mb-2">
                     <label htmlFor="title">Title</label>
                     <input type='text' className="form-control" {...register('title', { required: true })} />

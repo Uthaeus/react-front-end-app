@@ -45,6 +45,13 @@ function Blog() {
 
     function toggleBlogForm() {
         let element = document.querySelector('.blog-form-container');
+        let blogItemsElement = document.querySelector('.blog-item-link').firstChild;
+
+        setTimeout(() => {
+
+            blogItemsElement.classList.toggle('blog-items-top-margin');
+        }, 350);
+
         element.classList.toggle('blog-form-container-active');
         setShowForm(!showForm);
     }
@@ -63,7 +70,9 @@ function Blog() {
             <div className="blog-content">
                 <div className="blog-main">
                     <BlogForm user={user} newBlogHandler={newBlogHandler} blog={blog} />
+
                     {blog && <BlogDetail blog={blog} isBlogDetailHandler={isBlogDetailHandler} />}
+
                     {blogs.map(blog => <Link key={blog.id} className="blog-item-link" onClick={() => isBlogDetailHandler(blog)}><BlogItem blog={blog} /></Link>)}
                 </div>
 

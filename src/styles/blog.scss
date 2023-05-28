@@ -190,38 +190,61 @@
     display: flex;
     flex-direction: column;
     padding: 2rem;
+    margin-bottom:1rem;
+    border-bottom: 1px solid #4d030331;
     transition: all 0.5s ease-in-out;
 
-    .blog-detail-header {
+    .blog-detail-footer {
         width: 100%;
         display: flex;
         justify-content: space-between;
+    }
 
-        .blog-detail-title {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: rgb(35, 123, 153);
-        }
 
-        .blog-detail-poster {
-            font-size: 0.9em;
-            font-weight: bold;
-            color: rgb(131, 44, 44);
-        }
+    .blog-detail-title {
+        font-size: 2.5em;
+        letter-spacing: 2px;
+        font-weight: bold;
+        text-align: right;
+        color: rgb(35, 123, 153);
+    }
 
-        .blog-detail-subtitle {
-            font-size: 1.2em;
-            color: rgb(3, 3, 3);
-        }
+    .blog-detail-poster {
+        font-size: 0.7em;
+        color: rgb(131, 44, 44);
+    }
+
+    .blog-poster-name {
+        font-size: 0.9em;
+        color: rgb(35, 23, 23);
+    }
+
+    .blog-poster-date {
+        font-size: 0.8em;
+        color: rgb(49, 99, 134);
     }
 
     .blog-detail-content {
         width: 100%;
-        margin: 1rem 0;
-        padding: 1rem;
+        margin-top: 2rem;
+        padding: 1rem 2rem;
         border: 1px solid #4d030331;
         border-radius: 2px;
-        background: linear-gradient(180deg, #26262631 0%, #0a0a0a19 100%);
+        background: linear-gradient(30deg, rgb(230, 231, 230), rgb(238, 239, 239), rgb(236, 235, 235))
+    }
+
+    .blog-detail-back {
+        color: rgb(84, 23, 23);
+        font-size: 1.2em;
+        text-decoration: underline;
+        margin-top: 2rem;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+            color: rgb(177, 10, 10);
+            transform: scale(1.03);
+        }
     }
 }
 
@@ -229,6 +252,10 @@
 
 .blog-form-container-active {
     transform: translateY(700px);
+}
+
+.blog-items-top-margin {
+    margin-top: 400px;
 }
 
 .blog-form-container {
