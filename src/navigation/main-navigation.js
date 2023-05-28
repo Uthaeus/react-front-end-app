@@ -84,6 +84,14 @@ function MainNavigation() {
       >
         Blog
       </NavLink>
+      <NavLink
+        to="/admin"
+        className={({ isActive }) =>
+          isActive ? "nav-link active" : "nav-link"
+        }
+      >
+        Admin
+      </NavLink>
     </div>
   );
 }

@@ -56,3 +56,36 @@ export const DUMMY_CATEGORIES = [
         name: 'C#'
     }
 ];
+
+export const DUMMY_USERS = [
+    {
+        id: 'admin1',
+        name: 'Admin',
+        email: 'admin@example.com',
+        role: 'admin',
+    },
+    {
+        id: 'user1',
+        name: 'Mark',
+        email: 'mark@example.com',
+        role: 'user',
+    },
+    {
+        id: 'user2',
+        name: 'Judy',
+        email: 'judy@example.com',
+        role: 'user',
+    },
+    {
+        id: 'user3',
+        name: 'Steve',
+        email: 'steve@example.com',
+        role: 'user',
+    },
+    {
+        id: 'user4',
+        name: 'Barb',
+        email: 'barb@example.com',
+        role: 'user',
+    }
+];

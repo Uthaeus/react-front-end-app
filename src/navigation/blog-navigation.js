@@ -110,14 +110,23 @@ function BlogNavigation({ setUserHandler, clearUserHandler }) {
           Comment
         </NavLink>
         <NavLink
-          to="/blog"
+          to="/blogs"
           className={({ isActive }) =>
             ({ isActive } ? "blog-link link-active" : "blog-link")
           }
         >
           Blogs
         </NavLink>
+        <NavLink
+          to="/admin"
+          className={({ isActive }) =>
+            isActive ? "blog-link link-active" : "blog-link"
+          }
+        >
+          Admin
+        </NavLink>
       </div>
+
 
       <div className="blog-navigation-auth-links">
         {user ? (

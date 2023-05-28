@@ -14,6 +14,8 @@ import CssExamples from "./examples/css-examples";
 import CommentExample from "./examples/comment-example";
 import Blog from "./blog/blog";
 import BlogLayout from "./blog/blog-layout";
+import AdminLayout from "./admin/admin-layout";
+import AdminMain from "./admin/admin-main";
 
 const router = createBrowserRouter([
   {
@@ -67,6 +69,17 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Blog />
+      }
+    ]
+  },
+  {
+    path: "/admin",
+    element: <AdminLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        index: true,
+        element: <AdminMain />
       }
     ]
   }

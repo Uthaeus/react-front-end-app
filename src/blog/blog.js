@@ -2,12 +2,11 @@ import { useOutletContext } from "react-router";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import { DUMMY_BLOGS, DUMMY_CATEGORIES } from "./dummy_data";
+import { DUMMY_BLOGS, DUMMY_CATEGORIES } from "../util/dummy_data";
 import BlogItem from "./blog-item";
 import BlogDetail from "./blog-detail";
 import BlogSidebar from "./blog-sidebar";
 import BlogForm from "./blog-form";
-import { set } from "react-hook-form";
 
 function Blog() {
     const [user] = useOutletContext();
