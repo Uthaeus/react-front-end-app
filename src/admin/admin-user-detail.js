@@ -7,11 +7,20 @@ import AdminBlogDetail from "./admin-blog-detail";
 
 function AdminUserDetail({ user, blogs, comments, userDisplayHandler}) {
     const [blog, setBlog] = useState(null);
+    const [commentBlog, setCommentBlog] = useState(null);
+
+    function toggleCommentBlogDetail(id) {
+        let commentBlog = blogs.find(blog => blog.id === id);
+        setCommentBlog(commentBlog);
+
+        let element = document.querySelector('.admin-user-blogs-blog-detail-wrapper');
+        element.classList.toggle('admin-comment-blog-detail-container-slide-in');
+    }
 
     function toggleBlogDetail(blog) {
         setBlog(blog);
 
-        let element = document.querySelector('.admin-blog-detail-container');
+        let element = document.querySelector('.admin-user-comments-blog-detail-wrapper');
         element.classList.toggle('admin-blog-detail-container-slide-in');
     }
     
@@ -28,15 +37,23 @@ function AdminUserDetail({ user, blogs, comments, userDisplayHandler}) {
             </div>
 
             <div className="admin-user-blogs-wrapper">
+
+                <div className="admin-user-blogs-blog-detail-wrapper">
+                    <AdminBlogDetail blog={commentBlog} toggleBlogDetail={toggleCommentBlogDetail} />
+                </div>
+
                 <h2 className="user-blogs-title">{user?.name}'s Blogs</h2>
                 {blogs.map(blog => <AdminBlogItem key={blog.id} blog={blog} toggleBlogDetail={toggleBlogDetail} />)}
             </div>
 
             <div className="admin-user-comments-wrapper">
-                <AdminBlogDetail blog={blog} toggleBlogDetail={toggleBlogDetail} />
+
+                <div className="admin-user-comments-blog-detail-wrapper">
+                    <AdminBlogDetail blog={blog} toggleBlogDetail={toggleBlogDetail} />
+                </div>
                 
                 <h2 className="user-comments-title">{user?.name}'s Comments</h2>
-                {comments.map(comment => <AdminCommentItem key={comment.id} comment={comment} />)}
+                {comments.map(comment => <AdminCommentItem key={comment.id} comment={comment} toggleCommentBlogDetail={toggleCommentBlogDetail} />)}
             </div>
         </div>
     );
