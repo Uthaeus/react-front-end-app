@@ -1,11 +1,19 @@
+import { useState } from "react";
 
 import AdminBlogItem from "./admin-blog-item";
 import AdminCommentItem from "./admin-comment-item";
+import AdminBlogDetail from "./admin-blog-detail";
 
 
 function AdminUserDetail({ user, blogs, comments, userDisplayHandler}) {
+    const [blog, setBlog] = useState(null);
 
-    function toggleBlogDetail(blog) {}
+    function toggleBlogDetail(blog) {
+        setBlog(blog);
+
+        let element = document.querySelector('.admin-blog-detail-container');
+        element.classList.toggle('admin-blog-detail-container-slide-in');
+    }
     
 
     return (
@@ -25,6 +33,8 @@ function AdminUserDetail({ user, blogs, comments, userDisplayHandler}) {
             </div>
 
             <div className="admin-user-comments-wrapper">
+                <AdminBlogDetail blog={blog} toggleBlogDetail={toggleBlogDetail} />
+                
                 <h2 className="user-comments-title">{user?.name}'s Comments</h2>
                 {comments.map(comment => <AdminCommentItem key={comment.id} comment={comment} />)}
             </div>
