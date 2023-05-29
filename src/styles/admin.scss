@@ -74,18 +74,120 @@
 // Admin User Detail
 
 .admin-user-detail-slide-in {
-    transform: translateX(1500px);
+    transform: translateX(125%);
 }
 
 .admin-user-detail-container {
     width: 100%;
-    min-height: 600px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: grey;
+    height: 650px;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: rgb(182, 184, 186);
     position: absolute;
-    left: -1500px;
+    left: -125%;
     z-index: 100;
     transition: all 0.5s ease-in-out;
+
+    .admin-user-detail-info-wrapper {
+        width: 80%;
+        height: 70%;
+        margin: 4rem auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-bottom: 1px solid rgb(156, 155, 155);
+
+        .info-wrapper-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: rgb(80, 53, 22);
+        }
+
+        .info-wrapper-email {
+            font-size: 1.2rem;
+            color: rgb(14, 50, 112);
+        }
+
+        .info-wrapper-role {
+            color: rgb(6, 6, 6);
+        }
+
+        .info-wrapper-btn {
+            width: 150px;
+            padding: 2px 24px;
+            border-radius: 2px;
+            box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.04);
+                box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.75);
+            }
+        }
+    }
+
+    .admin-user-blogs-wrapper {
+        width: 100%;
+        padding: 0 0.5rem;
+        border-left: 1px solid rgb(156, 155, 155);
+        border-right: 1px solid rgb(156, 155, 155);
+
+        .user-blogs-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: rgb(80, 53, 22);
+            text-decoration: underline;
+        }
+    }
+
+    .admin-user-comments-wrapper {
+        width: 100%;
+        padding: 0 0.5rem;
+
+        .user-comments-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: rgb(80, 53, 22);
+            text-decoration: underline;
+        }
+    }
+}
+
+.admin-blog-item-container {
+    width: 100%;
+    height: 145px;
+    padding: 1rem;
+    border-bottom: 1px solid rgb(156, 155, 155);
+
+    .blog-item-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: rgb(80, 53, 22);
+        margin-bottom: 0.5rem;
+    }
+
+    .blog-item-content {
+        font-size: 1rem;
+        color: rgb(6, 6, 6);
+    }
+
+    .blog-item-details {
+        text-align: right;
+        font-size: 0.8rem;
+        color: rgb(6, 6, 6);
+    }
+
+    .blog-item-poster {
+        font-size: 0.9rem;
+        color: rgb(126, 80, 20);
+    }
+
+    .blog-item-date {
+        font-size: 0.9rem;
+        color: rgb(142, 25, 25);
+    }
 }
