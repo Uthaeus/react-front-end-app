@@ -6,7 +6,6 @@ import logo from "../assets/images/space-main1.jpg";
 
 function BlogNavigation({ setUserHandler, clearUserHandler }) {
   const [user, setUser] = useState(null);
-  const [isUserForm, setIsUserForm] = useState(false);
 
   function logoutHandler() {
     setUser(null);
