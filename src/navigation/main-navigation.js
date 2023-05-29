@@ -92,6 +92,14 @@ function MainNavigation() {
       >
         Admin
       </NavLink>
+      <NavLink
+        to="/admin/comments"
+        className={({ isActive }) =>
+          isActive ? "nav-link active" : "nav-link"
+        }
+      >
+        Comments
+      </NavLink>
     </div>
   );
 }

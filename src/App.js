@@ -16,6 +16,7 @@ import Blog from "./blog/blog";
 import BlogLayout from "./blog/blog-layout";
 import AdminLayout from "./admin/admin-layout";
 import AdminMain from "./admin/admin-main";
+import Comments from "./comments/comments";
 
 const router = createBrowserRouter([
   {
@@ -80,6 +81,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <AdminMain />
+      },
+      {
+        path: "/admin/comments",
+        element: <Comments />
       }
     ]
   }

@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useState } from "react";
 
 import BlogLoginForm from "../util/blog-login-form";
@@ -40,7 +40,7 @@ function BlogNavigation({ setUserHandler, clearUserHandler }) {
           to="/"
           end
           className={({ isActive }) =>
-            ({ isActive } ? "blog-link link-active" : "blog-link")
+            (isActive ? "blog-link link-active" : "blog-link")
           }
         >
           Home
@@ -48,7 +48,7 @@ function BlogNavigation({ setUserHandler, clearUserHandler }) {
         <NavLink
           to="/calculator"
           className={({ isActive }) =>
-            ({ isActive } ? "blog-link link-active" : "blog-link")
+            (isActive ? "blog-link link-active" : "blog-link")
           }
         >
           Calculator
@@ -56,7 +56,7 @@ function BlogNavigation({ setUserHandler, clearUserHandler }) {
         <NavLink
           to="/quote"
           className={({ isActive }) =>
-            ({ isActive } ? "blog-link link-active" : "blog-link")
+            (isActive ? "blog-link link-active" : "blog-link")
           }
         >
           Quote
@@ -64,7 +64,7 @@ function BlogNavigation({ setUserHandler, clearUserHandler }) {
         <NavLink
           to="/drum"
           className={({ isActive }) =>
-            ({ isActive } ? "blog-link link-active" : "blog-link")
+            (isActive ? "blog-link link-active" : "blog-link")
           }
         >
           Drum
@@ -72,7 +72,7 @@ function BlogNavigation({ setUserHandler, clearUserHandler }) {
         <NavLink
           to="/pomodoro"
           className={({ isActive }) =>
-            ({ isActive } ? "blog-link link-active" : "blog-link")
+            (isActive ? "blog-link link-active" : "blog-link")
           }
         >
           Pomodoro
@@ -80,7 +80,7 @@ function BlogNavigation({ setUserHandler, clearUserHandler }) {
         <NavLink
           to="/markdown"
           className={({ isActive }) =>
-            ({ isActive } ? "blog-link link-active" : "blog-link")
+            (isActive ? "blog-link link-active" : "blog-link")
           }
         >
           Markdown
@@ -88,7 +88,7 @@ function BlogNavigation({ setUserHandler, clearUserHandler }) {
         <NavLink
           to="/example-form"
           className={({ isActive }) =>
-            ({ isActive } ? "blog-link link-active" : "blog-link")
+            (isActive ? "blog-link link-active" : "blog-link")
           }
         >
           Form
@@ -96,7 +96,7 @@ function BlogNavigation({ setUserHandler, clearUserHandler }) {
         <NavLink
           to="/css-examples"
           className={({ isActive }) =>
-            ({ isActive } ? "blog-link link-active" : "blog-link")
+            (isActive ? "blog-link link-active" : "blog-link")
           }
         >
           CSS
@@ -104,7 +104,7 @@ function BlogNavigation({ setUserHandler, clearUserHandler }) {
         <NavLink
           to="/comment-example"
           className={({ isActive }) =>
-            ({ isActive } ? "blog-link link-active" : "blog-link")
+            (isActive ? "blog-link link-active" : "blog-link")
           }
         >
           Comment
@@ -112,7 +112,7 @@ function BlogNavigation({ setUserHandler, clearUserHandler }) {
         <NavLink
           to="/blogs"
           className={({ isActive }) =>
-            ({ isActive } ? "blog-link link-active" : "blog-link")
+            (isActive ? "blog-link link-active" : "blog-link")
           }
         >
           Blogs
@@ -125,38 +125,40 @@ function BlogNavigation({ setUserHandler, clearUserHandler }) {
         >
           Admin
         </NavLink>
+        <NavLink
+          to="/admin/comments"
+          className={({ isActive }) =>
+            isActive ? "blog-link link-active" : "blog-link"
+          }
+        >
+          Comments
+        </NavLink>
       </div>
 
 
       <div className="blog-navigation-auth-links">
         {user ? (
-          <NavLink
+          <Link
             onClick={logoutHandler}
-            className={({ isActive }) =>
-              ({ isActive } ? "blog-link link-active" : "blog-link")
-            }
+            className="blog-link"
           >
             Logout
-          </NavLink>
+          </Link>
         ) : (
           <>
             <BlogLoginForm loginHandler={loginHandler} />
-            <NavLink
+            <Link
               onClick={loginToggleHandler}
-              className={({ isActive }) =>
-                ({ isActive } ? "blog-link link-active" : "blog-link")
-              }
+              className="blog-link"
             >
               Login
-            </NavLink>
-            <NavLink
+            </Link>
+            <Link
               onClick={loginToggleHandler}
-              className={({ isActive }) =>
-                ({ isActive } ? "blog-link link-active" : "blog-link")
-              }
+              className="blog-link"
             >
               Register
-            </NavLink>
+            </Link>
           </>
         )}
       </div>
