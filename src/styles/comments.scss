@@ -125,14 +125,43 @@
     }
 }
 
-.submit-action-div {}
+.submit-action-div {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    background-color: rgb(48, 91, 135);
+    border-radius: 9px;
+    box-shadow: 2px 2px 2px rgba(128, 128, 128, 0.36);
+}
 
 .submit-action-div-animation {
-    animation: submit-action-div-animation 0.5s ease-in-out;
+    animation: submit-action-div-animation 1.5s ease-in-out;
 }
 
 @keyframes submit-action-div-animation {
-    
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-50px);
+        width: 22px;
+        height: 22px;
+        border-radius: 11px;
+    }
+    60% {
+        transform: translateY(-90px);
+        width: 26px;
+        height: 26px;
+        border-radius: 13px;
+        box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.36);
+    }
+    100% {
+        transform: translateY(-600px) translateX(800px);
+        width: 44px;
+        height: 44px;
+        border-radius: 22px;
+        box-shadow: 6px 6px 6px rgba(128, 128, 128, 0.36);
+    }
 }
 // Comment Item
 

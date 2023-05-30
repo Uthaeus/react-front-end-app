@@ -12,6 +12,11 @@ function Comments() {
         const actionDiv = document.querySelector(".submit-action-div");
 
         actionDiv.classList.add("submit-action-div-animation");
+        
+        setTimeout(() => {
+
+            actionDiv.classList.remove("submit-action-div-animation");
+        }, 1600);
     }
 
     function addCommentHandler(comment) {
@@ -21,7 +26,7 @@ function Comments() {
             setComments((prevComments) => {
                 return [comment, ...prevComments];
             });
-        }, 600);
+        }, 1400);
     }
 
     return (
